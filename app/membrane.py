@@ -8,7 +8,7 @@ import tweepy
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
-def main():
+def twitter():
 	config = yaml.load(open(os.path.join(__location__, 'config.yml')))
 	auth = tweepy.OAuthHandler(config['consumer_key'], config['consumer_secret'])
 
@@ -26,21 +26,4 @@ def main():
 	else:
 		auth.set_access_token(config['access_key'], config['access_secret'])
 
-	stream = tweepy.streaming.Stream(auth, StreamObserver())
-	stream.filter(track=['dinosaur'])
-
-# http://goo.gl/2FpqQ
-class StreamObserver(tweepy.StreamListener):
-	def on_status(self, status):
-		print status.text
-
-	def on_error(self, status_code):
-		print >> sys.stderr, 'Encoundered error with status code:', status_code
-		return True # Don't kill the stream
-
-	def on_timeout(self):
-		print >> sys.stderr, 'Timeout...'
-		return True # Don't kill the stream
-
-if __name__ == '__main__':
-	sys.exit(main())
+	return tweepy.API(auth)

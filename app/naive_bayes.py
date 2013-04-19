@@ -15,9 +15,9 @@ class NaiveBayes:
 		self.ngram_size = ngram_size
 		self.pos_examples = pos_examples
 		self.neg_examples = neg_examples
-		self.probs = dict()
+		self.probs = {}
 
-	def train():
+	def train(self):
 		'''
 		Trains the classifier
 		'''
@@ -34,7 +34,7 @@ class NaiveBayes:
 			self.probs[ngram] = [pos_p, neg_p]
 
 
-	def test(threshold, pos_test_examples, neg_test_examples):
+	def test(self, threshold, pos_test_examples, neg_test_examples):
 		'''
 		Tests the classifier
 
@@ -65,7 +65,7 @@ class NaiveBayes:
 				'false negatives': fn}
 	
 
-	def best_pos_predictors():
+	def best_pos_predictors(self):
 		'''
 		Calculates best positive classification predictors
 
@@ -77,7 +77,7 @@ class NaiveBayes:
 		filtered_list = filter(lambda (k,v): self.pos_counts[k] > 10, sorted_list)
 		return list(reversed(filtered_list))[:500]
 
-	def best_neg_predictors():
+	def best_neg_predictors(self):
 		'''
 		Calculates best negative classification predictors
 
@@ -89,7 +89,7 @@ class NaiveBayes:
 		filtered_list = filter(lambda (k,v): self.neg_counts[k] > 10, sorted_list)
 		return list(reversed(filtered_list))[:500]
 
-	def classify(doc):
+	def classify(self, doc):
 		'''
 		Classifies a document.
 
@@ -102,7 +102,7 @@ class NaiveBayes:
 		# Create pos/neg probabilities for each ngram,
 		# initialize as 0.5 if no data available.
 		probs = [self.probs[ngram] or [0.5, 0.5]
-				for ngram in self._to_ngrams(doc, self.ngram_size)]
+				for ngram in self._to_ngrams(doc)]
 
 		# Get the products of positive and negative probabilities
 		pos_probs = reduce(lambda x,y: x*y, [prob[0] for prob in probs])
@@ -111,7 +111,7 @@ class NaiveBayes:
 		
 
 	# Private
-	def _get_ngram_counts(docs):
+	def _get_ngram_counts(self, docs):
 		'''
 		Counts ngram occurences in a set of documents
 
@@ -124,12 +124,12 @@ class NaiveBayes:
 		# Add-one smoothing
 		counts = collections.defaultdict(lambda: 1)
 		for doc in docs:
-			for ngram in self._to_ngrams(doc, self.ngram_size):
+			for ngram in self._to_ngrams(doc):
 				counts[ngram] += 1
 		return counts
 
 
-	def _to_ngrams(doc):
+	def _to_ngrams(self, doc):
 		'''
 		Normalizes and converts a document into ngrams of size n
 
@@ -140,19 +140,20 @@ class NaiveBayes:
 		'''
 
 		ngrams = list()
-		normalized = normalize(doc).split()
+		normalized = self._normalize(doc).split()
 
 		# Iterate over the normalized doc in chunk sizes of ngram_size
-		# http://stackoverflow.com/questions/1335392/iteration-over-list-slices
+		# http://goo.gl/2bYCD
 		for chunk in map(None, *(iter(normalized),)*self.ngram_size):
 			if self.ngram_size > 1:
 				ngrams.append(' '.join(chunk))
 			else:
 				ngrams.append(chunk)
+
 		return ngrams
 
 
-	def _normalize(doc):
+	def _normalize(self, doc):
 		'''
 		Normalizes a document
 
