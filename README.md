@@ -1,5 +1,6 @@
 Parrott
 =======
+By [Francis Tseng](http://supermedes.com)
 
 [Parrott](http://supermedes.com/labs/parrott/) is intended to be a pseudo-intelligent retweeter. It will learn
 from your retweeting habits, and optionally the retweeting habits of
