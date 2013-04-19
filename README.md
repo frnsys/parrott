@@ -23,3 +23,12 @@ license](https://github.com/ftzeng/parrott/blob/master/LICENSE.txt).
 
 Why Parrott?
 I'm lazy and want a computer to do my social media for me.
+
+
+To Do
+=====
+* Add a DB or other retweet-saving method
+* Optionally provide list of other users to track (tweets or just
+	retweets)? This _could_ solve the problem below.
+* What should constitute a "negative example". Is a tweet that hasn't
+	been retweeted just a tweet that hasn't _yet_ been retweeted?
