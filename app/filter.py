@@ -5,50 +5,31 @@ import naive_bayes
 import membrane
 
 def main():
-	import csv
-	if len(sys.argv) < 2:
-		sys.exit('Please supply a CSV to process.')
-
-	filename = sys.argv[1]
-	reader = csv.reader(open(filename))
-	fields = reader.next()
-
 	'''
 	Temporary just loading latest stream as 
 	negative examples.
 	'''
 	twitter = membrane.twitter()
-	neg_examples = [tweet.author.name + tweet.text
-					for tweet in twitter.home_timeline()
-					if not tweet.retweeted]
+	neg = [example.strip() for example in open("data/neg.txt").readlines()]
+	pos = [example.strip() for example in open("data/pos.txt").readlines()]
+
 
 	'''
-	Only collecting the text of retweets.
-	The name of the original tweeter is in the text of the retweet,
-	so that should (somewhat) represent the original tweeter feature
-	in the classifier.
+	Split data into test and training sets
 	'''
-	retweet_col = fields.index('retweeted_status_id')
-	text_col = fields.index('text')
-	retweets = [row[text_col] for row in reader if row[retweet_col]]
+	pos_examples = pos[1::2]
+	pos_tests = pos[::2]
 
-	'''
-	Split positives into test and training set
-	'''
-	#pos_examples = retweets[1::2]
-	#pos_tests = retweets[::2]
-	print "Training on %i examples" % len(retweets)
-	pos_examples = retweets
+	neg_examples = neg[1::2]
+	neg_tests = neg[::2]
+	print "Training on %i positive examples" % len(pos_examples)
+	print "Training on %i negative examples" % len(neg_examples)
 
 	classifier = naive_bayes.NaiveBayes( pos_examples, neg_examples )
 	classifier.train()
-	print classifier.best_pos_predictors()
+	#print classifier.classify("A thought-provoking digital art project - Energy Flow made it into The Guardian's 30 best Android apps of the week!")
 
-	'''
-	Might be better to store retweets as CSV, or yaml, and constantly append to this CSV?
-	'''
-	#writer = csv.writer(file('retweets.csv', 'wb'), dialect='excel')
-	#writer.writerow(retweets)
+	print classifier.test(0.8, pos_tests, neg_tests)
 
 	return 0
 
