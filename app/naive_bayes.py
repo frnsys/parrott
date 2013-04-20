@@ -49,7 +49,6 @@ class NaiveBayes:
 
 		for doc in pos_test_examples:
 			if self.classify(doc) > threshold:
-				print doc
 				tp += 1
 			else:
 				fn += 1
@@ -58,7 +57,6 @@ class NaiveBayes:
 			if self.classify(doc) < threshold:
 				tn += 1
 			else:
-				print doc
 				fp += 1
 
 		return {'true positives': tp,
@@ -106,8 +104,7 @@ class NaiveBayes:
 		probs = [self.probs.setdefault(ngram, [0.5,0.5])
 				for ngram in self._to_ngrams(doc)]
 
-		if not probs:
-			return 0
+		if not probs: return 0
 
 		# Get the products of positive and negative probabilities
 		pos_probs = reduce(lambda x,y: x*y, [prob[0] for prob in probs])
