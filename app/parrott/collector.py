@@ -1,4 +1,10 @@
- #!/usr/bin/env python
+'''
+Collector
+======================
+By Francis Tseng (@frnsys)
+
+Collects tweets.
+'''
 
 import sys
 import membrane
