@@ -1,5 +1,7 @@
 Flask==0.9
 Jinja2==2.6
 Werkzeug==0.8.3
+requests==1.2.0
+sunburnt==0.6
 tweepy==2.0
 wsgiref==0.1.2
