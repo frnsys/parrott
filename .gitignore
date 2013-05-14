@@ -2,3 +2,5 @@
 parrott-env/
 *.pyc
 app/config.yml
+*.tgz
+solr/
