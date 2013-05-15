@@ -7,6 +7,10 @@ By Francis Tseng (@frnsys)
 import webbrowser
 import tweepy
 
+import os
+import simplejson as json
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
 def api():
 	'''
 	Authenticates a Twitter account
