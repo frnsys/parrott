@@ -6,29 +6,28 @@ By Francis Tseng (@frnsys)
 Collects tweets.
 '''
 
-import sys
 import membrane
+import sunburnt
 
-def main():
-	twitter = membrane.twitter()
+def tweets():
+	'''
+	Collects latest timeline tweets
+	for authenticated user.
+	'''
+	twitter = membrane.twitter.api()
+	tweets = [tweet.text.encode('utf-8') for tweet in twitter.home_timeline()]
+	return tweets
 
 	# Negative
-	datafile = open('data/neg.txt', 'wb')
-
-	# Positive
-	#datafile = open('data/pos.txt', 'wb')
-
-	# Negative
-	users = ["GrahamBlog", "TheScottyNavy", "zzBore", "IngrahamAngle", "limbaugh", "lindsaylohan", "LOHANTHONY", "realcollipark"]
+	#users = ["GrahamBlog", "TheScottyNavy", "zzBore", "IngrahamAngle", "limbaugh", "lindsaylohan", "LOHANTHONY", "realcollipark"]
 
 	# Positive
 	#users = ["frnsys", "HOLOmagazine", "butdoesitfloat", "synapticstimuli", "killscreen", "atleykins"]
 
-	for user in users:
-		for tweet in twitter.user_timeline(screen_name=user, count=200):
-			print>>datafile, tweet.text.encode('utf-8')
-
-	return 0
-
-if __name__ == '__main__':
-	sys.exit(main())
+def user_tweets( user ):
+	'''
+	Collect latest 200 tweets from specified user.
+	'''
+	twitter = membrane.twitter.api()
+	tweets = [tweet.text.encode('utf-8') for tweet in twitter.user_timeline(screen_name=user, count=200)]
+	return tweets
