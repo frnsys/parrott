@@ -3,5 +3,3 @@
 from parrott import Parrott
 
 test = Parrott()
-
-print parrott

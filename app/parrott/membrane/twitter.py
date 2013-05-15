@@ -32,8 +32,8 @@ def api():
 		config['twitter']['access_key'] = token.key
 		config['twitter']['access_secret'] = token.secret
 
-		with open('config.json', 'w') as outfile:
-			outfile.write( yaml.dump(config, default_flow_style=False) )
+		with open(os.path.join(__location__, 'config.json'), 'w') as outfile:
+			outfile.write( json.dumps(config, sort_keys=True, indent=4 * ' ') )
 	else:
 		auth.set_access_token(twitter['access_key'], twitter['access_secret'])
 
