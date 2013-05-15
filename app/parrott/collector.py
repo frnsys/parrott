@@ -26,7 +26,7 @@ def tweets():
 
 def user_tweets( user ):
 	'''
-	Collect latest 200 tweets from specified user.
+	Collect latest 200 tweets from specified user(name).
 	'''
 	twitter = membrane.twitter.api()
 	tweets = [tweet.text.encode('utf-8') for tweet in twitter.user_timeline(screen_name=user, count=200)]
