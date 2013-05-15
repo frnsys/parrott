@@ -1,6 +1,6 @@
 .DS_Store
 parrott-env/
 *.pyc
-app/config.yml
+config.json
 *.tgz
 solr/
