@@ -30,6 +30,21 @@ class Memory:
         '''
         return self.memory.query(audited=True).execute()
 
+    def recall_positive(self):
+        '''
+        Retrieves positive (audited) Tweets.
+        Amount returned depends on Solr's configuration.
+        '''
+        return self.memory.query(audited=True, positive=True).execute()
+
+    def recall_negative(self):
+        '''
+        Retrieves negative (audited) Tweets.
+        Amount returned depends on Solr's configuration.
+        '''
+        return self.memory.query(audited=True, positive=False).execute()
+
+
     def forget(self, tweet):
         '''
         Deletes a Tweet from Solr.
