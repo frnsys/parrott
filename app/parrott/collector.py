@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 '''
 Collector
 ======================
@@ -6,16 +8,26 @@ By Francis Tseng (@frnsys)
 Collects tweets.
 '''
 
+import sys
 import membrane
-import sunburnt
+from memory import Memory
+from pprint import pprint
 
 def tweets():
 	'''
-	Collects latest timeline tweets
-	for authenticated user.
+	Collects latest 20 timeline
+    tweets for authenticated user.
+
+    Returns:
+        List of Tweet texts
 	'''
 	twitter = membrane.twitter.api()
-	tweets = [tweet.text.encode('utf-8') for tweet in twitter.home_timeline()]
+
+    # Collect tweets and
+    # concatenate tweet text and username
+	tweets = [' '.join([tweet.text, tweet.user.screen_name]).encode('utf-8')
+                for tweet in twitter.home_timeline()]
+
 	return tweets
 
 	# Negative
@@ -31,3 +43,11 @@ def user_tweets( user ):
 	twitter = membrane.twitter.api()
 	tweets = [tweet.text.encode('utf-8') for tweet in twitter.user_timeline(screen_name=user, count=200)]
 	return tweets
+
+def main():
+    #memory = Memory()
+    for tweet in tweets():
+        pprint(tweet)
+
+if __name__ == '__main__':
+    sys.exit(main())
