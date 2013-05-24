@@ -30,6 +30,12 @@ class Memory:
         '''
         return self.memory.query(audited=True).execute()
 
+    def forget(self, tweet):
+        '''
+        Deletes a Tweet from Solr.
+        '''
+        self.memory.delete(tweet)
+
     def memorize(self, tweet):
         '''
         Adds a Tweet to Solr.
