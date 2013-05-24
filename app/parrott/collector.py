@@ -6,12 +6,12 @@ Collector
 By Francis Tseng (@frnsys)
 
 Collects tweets.
+Run as a cron job.
 '''
 
 import sys
 import membrane
 from memory import Memory
-from pprint import pprint
 
 def tweets():
 	'''
@@ -30,12 +30,6 @@ def tweets():
 
 	return tweets
 
-	# Negative
-	#users = ["GrahamBlog", "TheScottyNavy", "zzBore", "IngrahamAngle", "limbaugh", "lindsaylohan", "LOHANTHONY", "realcollipark"]
-
-	# Positive
-	#users = ["frnsys", "HOLOmagazine", "butdoesitfloat", "synapticstimuli", "killscreen", "atleykins"]
-
 def user_tweets( user ):
 	'''
 	Collect latest 200 tweets from specified user(name).
@@ -45,9 +39,10 @@ def user_tweets( user ):
 	return tweets
 
 def main():
-    #memory = Memory()
+    # Store Tweet text into Solr ("memory")
+    memory = Memory()
     for tweet in tweets():
-        pprint(tweet)
+        memory.memorize(tweet)
 
 if __name__ == '__main__':
     sys.exit(main())

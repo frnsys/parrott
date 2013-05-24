@@ -16,8 +16,19 @@ class Memory:
         h = httplib2.Http(cache="/var/tmp/solr_cache")
         self.memory = sunburnt.SolrInterface(url=SOLR_URL, http_connection=h)
 
-    def recall(self):
-        self.memory.query
+    def recall_unaudited(self):
+        '''
+        Retrieves unaudited Tweets.
+        Amount returned depends on Solr's configuration.
+        '''
+        return self.memory.query(audited=False).execute()
+
+    def recall_audited(self):
+        '''
+        Retrieves audited Tweets.
+        Amount returned depends on Solr's configuration.
+        '''
+        return self.memory.query(audited=True).execute()
 
     def memorize(self, tweet):
         '''
