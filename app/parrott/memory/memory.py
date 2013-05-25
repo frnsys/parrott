@@ -58,5 +58,6 @@ class Memory:
         Args:
             tweet (string): the Tweet content
         '''
-        self.memory.add({tweet: tweet})
+        self.memory.add({'tweet': tweet})
+        self.memory.commit()
 

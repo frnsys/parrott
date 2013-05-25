@@ -35,6 +35,11 @@ class Parrott:
         '''
         Tests the Parrott on a set of positive
         and negative examples.
+
+        Args:
+            pos_set (list): positive test examples
+            neg_set (list): negative test examples
+            threshold (float): testing threshold
         Returns:
             dict of test results.
         '''
@@ -43,7 +48,28 @@ class Parrott:
     def classify(self, tweet):
         '''
         Classifies a Tweet.
+
+        Args:
+            tweet (string): the Tweet content
         Returns:
             probability of positive classification.
         '''
         return self.brain.classify(tweet)
+
+    def audit(self, tweet, pos):
+        '''
+        Deletes an existing Tweet from Memory
+        and replaces it with the updated Tweet.
+
+        Args:
+            tweet (dict): the Tweet to audit
+            pos (bool): is the Tweet is a positive example?
+        '''
+
+        # Solr cannot "update", just delete & add.
+        self.memory.forget(tweet)
+
+        # Update and re-add.
+        tweet.update({'positive':pos, 'audited':True})
+        self.memory.add(tweet)
+
