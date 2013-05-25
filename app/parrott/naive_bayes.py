@@ -11,16 +11,17 @@ import collections
 import re
 
 class NaiveBayes:
-	def __init__(self, pos_examples, neg_examples, ngram_size=1):
-		self.ngram_size = ngram_size
-		self.pos_examples = pos_examples
-		self.neg_examples = neg_examples
+	def __init__(self):
 		self.probs = {}
 
-	def train(self):
+	def train(self, pos_examples, neg_examples, ngram_size=1):
 		'''
 		Trains the classifier
 		'''
+
+		self.ngram_size = ngram_size
+		self.pos_examples = pos_examples
+		self.neg_examples = neg_examples
 
 		self.pos_counts = self._get_ngram_counts(self.pos_examples)
 		self.neg_counts = self._get_ngram_counts(self.neg_examples)

@@ -1,2 +1,9 @@
+Powerline==beta
+distribute==0.6.40
+fontforge==1.0
+gdata==2.0.17
+git-remote-helpers==0.1.0
+mercurial==2.6.1
 tweepy==2.0
+virtualenv==1.9.1
 wsgiref==0.1.2
