@@ -1,2 +1,2 @@
-from parrott import Parrott
-
+import parrott
+import collector
