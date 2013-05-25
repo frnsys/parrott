@@ -38,11 +38,8 @@ def user_tweets( user ):
 	tweets = [tweet.text.encode('utf-8') for tweet in twitter.user_timeline(screen_name=user, count=200)]
 	return tweets
 
-def main():
+def collect():
     # Store Tweet text into Solr ("memory")
     memory = Memory()
     for tweet in tweets():
         memory.memorize(tweet)
-
-if __name__ == '__main__':
-    sys.exit(main())

@@ -1,1 +1,1 @@
-import memory
+from memory import Memory
