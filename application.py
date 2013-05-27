@@ -2,9 +2,6 @@
 
 from app import app
 from apscheduler.scheduler import Scheduler
-import parrott
-
-#parrott = parrott.Parrott( neg, pos )
 
 if __name__ == '__main__':
     app.run(debug=True)
