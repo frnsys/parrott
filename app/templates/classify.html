@@ -2,6 +2,7 @@
 {% block content %}
     <h1>Classify</h1>
 
+    {# Show flash messages. #}
     {% with messages = get_flashed_message() %}
     {% if messages %}
     <ul>
@@ -12,11 +13,16 @@
     {% endif %}
 
     <form action="" method="post" name="login">
+        {# CSRF field. #}
         {{form.hidden_tag()}}
+
         {{form.tweet(size=140)}}
+
+        {# Show validation errors. #}
         {% for error in form.errors.tweet %}
             <span style="color:red">{{error}}</span>
         {% endfor %}
+
         <input type="submit" value="Classify">
     </form>
 {% endblock %}
