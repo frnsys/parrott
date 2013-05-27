@@ -1,9 +1,22 @@
 {% extends 'layout.html' %}
 {% block content %}
     <h1>Classify</h1>
+
+    {% with messages = get_flashed_message() %}
+    {% if messages %}
+    <ul>
+        {% for message in message %}
+            <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     <form action="" method="post" name="login">
         {{form.hidden_tag()}}
         {{form.tweet(size=140)}}
+        {% for error in form.errors.tweet %}
+            <span style="color:red">{{error}}</span>
+        {% endfor %}
         <input type="submit" value="Classify">
     </form>
 {% endblock %}

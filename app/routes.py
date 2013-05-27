@@ -30,7 +30,7 @@ def classify():
 
     # Redirect on (valid) submit
     if form.validate_on_submit():
-        flash('Classify foo')
+        flash('The text you submitted was %s' % (form.tweet.data))
         return redirect('/')
     return render_template('classify.html', form=form)
 
