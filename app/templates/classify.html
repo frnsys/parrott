@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Classify</h1>
+    <form action="" method="post" name="login">
+        {{form.hidden_tag()}}
+        {{form.tweet(size=140)}}
+        <input type="submit" value="Classify">
+    </form>
+{% endblock %}
