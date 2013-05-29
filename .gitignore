@@ -4,3 +4,4 @@ parrott-env/
 config.json
 *.tgz
 solr_ex/
+solr_orig/
