@@ -38,6 +38,9 @@
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
 
+    <!-- necessary for solr's `_version_` field -->
+    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+
     <!-- A text field that only splits on whitespace for exact matching of words -->
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
       <analyzer>

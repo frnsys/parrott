@@ -235,3 +235,286 @@ INFO  - 2013-05-29 17:36:26.191; org.eclipse.jetty.server.Server; Graceful shutd
 INFO  - 2013-05-29 17:36:27.192; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=168500432
 INFO  - 2013-05-29 17:36:27.194; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
 INFO  - 2013-05-29 17:36:27.247; org.eclipse.jetty.util.thread.ShutdownThread; shutdown already commenced
+INFO  - 2013-05-29 17:40:45.998; org.eclipse.jetty.server.Server; jetty-8.1.8.v20121106
+INFO  - 2013-05-29 17:40:46.017; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Users/ftseng/Desktop/projects/parrott/solr/contexts at interval 0
+INFO  - 2013-05-29 17:40:46.023; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Users/ftseng/Desktop/projects/parrott/solr/contexts/solr-jetty-context.xml
+INFO  - 2013-05-29 17:40:46.656; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2013-05-29 17:40:46.687; org.eclipse.jetty.server.handler.ContextHandler; started o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 17:40:46.687; org.eclipse.jetty.server.handler.ContextHandler; started o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 17:40:46.698; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2013-05-29 17:40:46.711; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2013-05-29 17:40:46.711; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: memory
+INFO  - 2013-05-29 17:40:46.719; org.apache.solr.core.CoreContainer$Initializer; looking for solr config file: /Users/ftseng/Desktop/projects/parrott/solr/memory/solr.xml
+INFO  - 2013-05-29 17:40:46.721; org.apache.solr.core.CoreContainer; New CoreContainer 666157527
+INFO  - 2013-05-29 17:40:46.721; org.apache.solr.core.CoreContainer; Loading CoreContainer using Solr Home: 'memory/'
+INFO  - 2013-05-29 17:40:46.721; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'memory/'
+INFO  - 2013-05-29 17:40:46.940; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2013-05-29 17:40:46.941; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2013-05-29 17:40:46.941; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2013-05-29 17:40:46.943; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2013-05-29 17:40:46.943; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2013-05-29 17:40:46.943; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2013-05-29 17:40:46.943; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2013-05-29 17:40:46.943; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2013-05-29 17:40:46.944; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2013-05-29 17:40:46.948; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2013-05-29 17:40:47.082; org.apache.solr.core.CoreContainer; Registering Log Listener
+INFO  - 2013-05-29 17:40:47.096; org.apache.solr.core.CoreContainer; Creating SolrCore 'tweets' using instanceDir: memory/tweets
+INFO  - 2013-05-29 17:40:47.096; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'memory/tweets/'
+INFO  - 2013-05-29 17:40:47.143; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2013-05-29 17:40:47.145; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2013-05-29 17:40:47.145; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2013-05-29 17:40:47.145; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2013-05-29 17:40:47.145; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2013-05-29 17:40:47.146; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.146; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.146; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.146; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/fontbox-1.7.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.146; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/icu4j-49.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.147; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.147; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.147; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/jempbox-1.7.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.147; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2013-05-29 17:40:47.147; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2013-05-29 17:40:47.147; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2013-05-29 17:40:47.148; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/pdfbox-1.7.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.148; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-3.8.jar' to classloader
+INFO  - 2013-05-29 17:40:47.148; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-ooxml-3.8.jar' to classloader
+INFO  - 2013-05-29 17:40:47.148; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-ooxml-schemas-3.8.jar' to classloader
+INFO  - 2013-05-29 17:40:47.148; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-scratchpad-3.8.jar' to classloader
+INFO  - 2013-05-29 17:40:47.149; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2013-05-29 17:40:47.149; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.149; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/tika-core-1.3.jar' to classloader
+INFO  - 2013-05-29 17:40:47.149; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/tika-parsers-1.3.jar' to classloader
+INFO  - 2013-05-29 17:40:47.149; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.150; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.150; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.150; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.150; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/xz-1.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.151; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-cell-4.3.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.151; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/attributes-binder-1.0.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.152; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/carrot2-mini-3.6.2.jar' to classloader
+INFO  - 2013-05-29 17:40:47.152; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/hppc-0.4.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.152; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
+INFO  - 2013-05-29 17:40:47.152; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
+INFO  - 2013-05-29 17:40:47.153; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.153; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2013-05-29 17:40:47.153; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/simple-xml-2.6.4.jar' to classloader
+INFO  - 2013-05-29 17:40:47.153; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-clustering-4.3.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.154; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2013-05-29 17:40:47.154; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2013-05-29 17:40:47.154; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-langid-4.3.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.155; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.155; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2013-05-29 17:40:47.155; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2013-05-29 17:40:47.156; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.156; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-velocity-4.3.0.jar' to classloader
+INFO  - 2013-05-29 17:40:47.258; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_43
+INFO  - 2013-05-29 17:40:47.354; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-05-29 17:40:47.359; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-05-29 17:40:47.369; org.apache.solr.schema.IndexSchema; Schema name=parrott
+ERROR - 2013-05-29 17:40:47.452; org.apache.solr.core.CoreContainer; Unable to create core: tweets
+org.apache.solr.common.SolrException: Unknown fieldType 'long' specified on field _version_
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:486)
+	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:176)
+	at org.apache.solr.schema.ClassicIndexSchemaFactory.create(ClassicIndexSchemaFactory.java:62)
+	at org.apache.solr.schema.IndexSchemaFactory.buildIndexSchema(IndexSchemaFactory.java:36)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:946)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:984)
+	at org.apache.solr.core.CoreContainer$2.call(CoreContainer.java:597)
+	at org.apache.solr.core.CoreContainer$2.call(CoreContainer.java:592)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:680)
+ERROR - 2013-05-29 17:40:47.454; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: Unable to create core: tweets
+	at org.apache.solr.core.CoreContainer.recordAndThrow(CoreContainer.java:1450)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:993)
+	at org.apache.solr.core.CoreContainer$2.call(CoreContainer.java:597)
+	at org.apache.solr.core.CoreContainer$2.call(CoreContainer.java:592)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.apache.solr.common.SolrException: Unknown fieldType 'long' specified on field _version_
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:486)
+	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:176)
+	at org.apache.solr.schema.ClassicIndexSchemaFactory.create(ClassicIndexSchemaFactory.java:62)
+	at org.apache.solr.schema.IndexSchemaFactory.buildIndexSchema(IndexSchemaFactory.java:36)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:946)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:984)
+	... 10 more
+
+INFO  - 2013-05-29 17:40:47.455; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Users/ftseng/Desktop/projects/parrott/solr
+INFO  - 2013-05-29 17:40:47.455; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2013-05-29 17:40:47.482; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2013-05-29 17:40:56.291; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2013-05-29 17:40:56.292; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 17:40:57.294; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=666157527
+INFO  - 2013-05-29 17:40:57.296; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 17:40:57.350; org.eclipse.jetty.util.thread.ShutdownThread; shutdown already commenced
+INFO  - 2013-05-29 18:00:32.642; org.eclipse.jetty.server.Server; jetty-8.1.8.v20121106
+INFO  - 2013-05-29 18:00:32.664; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Users/ftseng/Desktop/projects/parrott/solr/contexts at interval 0
+INFO  - 2013-05-29 18:00:32.669; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Users/ftseng/Desktop/projects/parrott/solr/contexts/solr-jetty-context.xml
+INFO  - 2013-05-29 18:00:33.291; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2013-05-29 18:00:33.324; org.eclipse.jetty.server.handler.ContextHandler; started o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 18:00:33.324; org.eclipse.jetty.server.handler.ContextHandler; started o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 18:00:33.336; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2013-05-29 18:00:33.348; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2013-05-29 18:00:33.348; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: memory
+INFO  - 2013-05-29 18:00:33.357; org.apache.solr.core.CoreContainer$Initializer; looking for solr config file: /Users/ftseng/Desktop/projects/parrott/solr/memory/solr.xml
+INFO  - 2013-05-29 18:00:33.359; org.apache.solr.core.CoreContainer; New CoreContainer 875010279
+INFO  - 2013-05-29 18:00:33.360; org.apache.solr.core.CoreContainer; Loading CoreContainer using Solr Home: 'memory/'
+INFO  - 2013-05-29 18:00:33.360; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'memory/'
+INFO  - 2013-05-29 18:00:33.580; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2013-05-29 18:00:33.580; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2013-05-29 18:00:33.581; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2013-05-29 18:00:33.582; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2013-05-29 18:00:33.583; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2013-05-29 18:00:33.583; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2013-05-29 18:00:33.583; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2013-05-29 18:00:33.583; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2013-05-29 18:00:33.583; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2013-05-29 18:00:33.588; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2013-05-29 18:00:33.730; org.apache.solr.core.CoreContainer; Registering Log Listener
+INFO  - 2013-05-29 18:00:33.743; org.apache.solr.core.CoreContainer; Creating SolrCore 'tweets' using instanceDir: memory/tweets
+INFO  - 2013-05-29 18:00:33.744; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'memory/tweets/'
+INFO  - 2013-05-29 18:00:33.789; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2013-05-29 18:00:33.791; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2013-05-29 18:00:33.791; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2013-05-29 18:00:33.791; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2013-05-29 18:00:33.791; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2013-05-29 18:00:33.792; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.792; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.792; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.792; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/fontbox-1.7.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.792; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/icu4j-49.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.792; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.793; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.793; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/jempbox-1.7.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.793; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2013-05-29 18:00:33.793; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2013-05-29 18:00:33.793; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2013-05-29 18:00:33.794; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/pdfbox-1.7.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.794; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-3.8.jar' to classloader
+INFO  - 2013-05-29 18:00:33.794; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-ooxml-3.8.jar' to classloader
+INFO  - 2013-05-29 18:00:33.794; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-ooxml-schemas-3.8.jar' to classloader
+INFO  - 2013-05-29 18:00:33.794; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/poi-scratchpad-3.8.jar' to classloader
+INFO  - 2013-05-29 18:00:33.795; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2013-05-29 18:00:33.795; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.795; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/tika-core-1.3.jar' to classloader
+INFO  - 2013-05-29 18:00:33.795; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/tika-parsers-1.3.jar' to classloader
+INFO  - 2013-05-29 18:00:33.795; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.795; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.796; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.796; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.796; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/extraction/lib/xz-1.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.797; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-cell-4.3.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.797; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/attributes-binder-1.0.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.798; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/carrot2-mini-3.6.2.jar' to classloader
+INFO  - 2013-05-29 18:00:33.798; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/hppc-0.4.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.798; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
+INFO  - 2013-05-29 18:00:33.798; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
+INFO  - 2013-05-29 18:00:33.798; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.799; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2013-05-29 18:00:33.799; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/clustering/lib/simple-xml-2.6.4.jar' to classloader
+INFO  - 2013-05-29 18:00:33.799; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-clustering-4.3.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.800; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2013-05-29 18:00:33.800; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2013-05-29 18:00:33.800; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-langid-4.3.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.801; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.801; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2013-05-29 18:00:33.801; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2013-05-29 18:00:33.801; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.802; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/ftseng/Desktop/projects/parrott/solr/dist/solr-velocity-4.3.0.jar' to classloader
+INFO  - 2013-05-29 18:00:33.908; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_43
+INFO  - 2013-05-29 18:00:34.003; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-05-29 18:00:34.008; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-05-29 18:00:34.018; org.apache.solr.schema.IndexSchema; Schema name=parrott
+INFO  - 2013-05-29 18:00:34.118; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2013-05-29 18:00:34.220; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-05-29 18:00:34.225; org.apache.solr.core.SolrCore; [tweets] Opening new SolrCore at memory/tweets/, dataDir=/Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data/
+INFO  - 2013-05-29 18:00:34.225; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: tweets
+INFO  - 2013-05-29 18:00:34.228; org.apache.solr.core.SolrCore; [tweets] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2013-05-29 18:00:34.228; org.apache.solr.core.SolrCore; [tweets] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2013-05-29 18:00:34.232; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-05-29 18:00:34.239; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data
+INFO  - 2013-05-29 18:00:34.239; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data/index/
+INFO  - 2013-05-29 18:00:34.240; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data/index
+INFO  - 2013-05-29 18:00:34.246; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2013-05-29 18:00:34.246; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2013-05-29 18:00:34.246; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2013-05-29 18:00:34.248; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2013-05-29 18:00:34.249; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2013-05-29 18:00:34.316; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.316; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.317; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2013-05-29 18:00:34.317; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.319; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2013-05-29 18:00:34.320; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2013-05-29 18:00:34.321; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2013-05-29 18:00:34.322; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-05-29 18:00:34.322; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-05-29 18:00:34.322; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2013-05-29 18:00:34.322; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2013-05-29 18:00:34.322; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-05-29 18:00:34.322; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-05-29 18:00:34.324; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2013-05-29 18:00:34.325; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2013-05-29 18:00:34.326; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.332; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.333; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2013-05-29 18:00:34.343; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-05-29 18:00:34.345; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-05-29 18:00:34.345; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-05-29 18:00:34.365; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@7e3b3757 main
+INFO  - 2013-05-29 18:00:34.377; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2013-05-29 18:00:34.378; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2013-05-29 18:00:34.378; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2013-05-29 18:00:34.382; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2013-05-29 18:00:34.387; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2013-05-29 18:00:34.388; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/conf/elevate.xml
+INFO  - 2013-05-29 18:00:34.422; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2013-05-29 18:00:34.422; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@7e3b3757 main{StandardDirectoryReader(segments_1:1)}
+INFO  - 2013-05-29 18:00:34.422; org.apache.solr.core.CoreContainer; registering core: tweets
+INFO  - 2013-05-29 18:00:34.424; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Users/ftseng/Desktop/projects/parrott/solr
+INFO  - 2013-05-29 18:00:34.424; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2013-05-29 18:00:34.451; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2013-05-29 18:00:34.456; org.apache.solr.core.SolrCore; [tweets] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=33 
+INFO  - 2013-05-29 18:00:34.457; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-05-29 18:00:34.457; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2013-05-29 18:00:34.457; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2013-05-29 18:00:34.457; org.apache.solr.core.SolrCore; [tweets] Registered new searcher Searcher@7e3b3757 main{StandardDirectoryReader(segments_1:1)}
+INFO  - 2013-05-29 18:00:37.063; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369864837052&wt=json} status=0 QTime=1 
+INFO  - 2013-05-29 18:00:37.120; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/admin/system params={_=1369864837077&wt=json} status=0 QTime=37 
+INFO  - 2013-05-29 18:00:42.161; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2013-05-29 18:00:42.162; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 18:00:43.170; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=875010279
+INFO  - 2013-05-29 18:00:43.173; org.apache.solr.core.SolrCore; [tweets]  CLOSING SolrCore org.apache.solr.core.SolrCore@4d88a387
+INFO  - 2013-05-29 18:00:43.173; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+INFO  - 2013-05-29 18:00:43.174; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2013-05-29 18:00:43.174; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2013-05-29 18:00:43.174; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2013-05-29 18:00:43.175; org.apache.solr.core.SolrCore; [tweets] Closing main searcher on request.
+INFO  - 2013-05-29 18:00:43.175; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2013-05-29 18:00:43.176; org.apache.solr.core.CachingDirectoryFactory; looking to close /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data/index [CachedDir<<refCount=0;path=/Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data/index;done=false>>]
+INFO  - 2013-05-29 18:00:43.176; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data/index
+INFO  - 2013-05-29 18:00:43.176; org.apache.solr.core.CachingDirectoryFactory; looking to close /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data [CachedDir<<refCount=0;path=/Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data;done=false>>]
+INFO  - 2013-05-29 18:00:43.177; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /Users/ftseng/Desktop/projects/parrott/solr/memory/tweets/data
+INFO  - 2013-05-29 18:00:43.178; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Users/ftseng/Desktop/projects/parrott/solr/solr-webapp/webapp/},/Users/ftseng/Desktop/projects/parrott/solr/webapps/solr.war
+INFO  - 2013-05-29 18:00:43.231; org.eclipse.jetty.util.thread.ShutdownThread; shutdown already commenced

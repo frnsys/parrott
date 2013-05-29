@@ -21,6 +21,12 @@ bigrams and so on.
 Parrott is still under development. It is licensed under the [MIT
 license](https://github.com/ftzeng/parrott/blob/master/LICENSE.txt).
 
+Note: to run the dev Jetty/Solr server:
+``` bash
+    $ cd solr
+    $ java -jar start.jar -Dsolr.solr.home=memory
+```
+
 Why Parrott?
 I'm lazy and want a computer to do my social media for me.
 
