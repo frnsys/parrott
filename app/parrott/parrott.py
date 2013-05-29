@@ -20,7 +20,7 @@ class Parrott:
         '''
         self.brain = naive_bayes.NaiveBayes()
         self.twitter = membrane.twitter.api()
-        self.memory = Memory()
+        #self.memory = Memory()
 
     def train(self):
         '''

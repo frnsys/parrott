@@ -5,5 +5,5 @@ app.config.from_object('config')
 from app import routes
 
 # Create the Parrott!
-import parrott
+from parrott import Parrott
 parrott = Parrott()
