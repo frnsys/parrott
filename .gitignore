@@ -3,5 +3,4 @@ parrott-env/
 *.pyc
 config.json
 *.tgz
-solr_ex/
-solr_orig/
+ref/
