@@ -26,6 +26,7 @@ Note: to run the dev Jetty/Solr server:
     $ cd solr
     $ java -jar start.jar -Dsolr.solr.home=memory
 ```
+Then access at `http://localhost:8983/solr/#/`.
 
 Why Parrott?
 I'm lazy and want a computer to do my social media for me.
