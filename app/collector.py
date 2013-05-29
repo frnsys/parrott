@@ -11,7 +11,6 @@ Run as a cron job.
 
 import sys
 from parrott import membrane, memory
-import pprint
 
 def tweets():
     '''
