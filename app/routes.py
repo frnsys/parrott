@@ -7,12 +7,13 @@ from app import app
 def index():
     return render_template('index.html')
 
-@app.route('/audited')
-def audited():
+@app.route('/audited/')
+@app.route('/audited/<int:page>')
+def audited(page=0):
     '''
     View latest audited Tweets.
     '''
-    app.parrott.memory.recall_audited()
+    app.parrott.memory.recall_audited(page)
 
 @app.route('/audit/')
 @app.route('/audit/<int:page>')
