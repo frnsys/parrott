@@ -2,7 +2,7 @@
 
 <schema name="parrott" version="1.5">
  <fields>
-   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
+   <field name="id" type="uuid" indexed="true" stored="true" />
    <field name="tweet" type="text_en" indexed="true" stored="true"/>
    <field name="user" type="text_general" indexed="true" stored="true"/>
    <field name="links" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -40,6 +40,9 @@
 
     <!-- necessary for solr's `_version_` field -->
     <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+
+    <!-- unique id field -->
+    <fieldType name="uuid" class="solr.UUIDField" indexed="true" />
 
     <!-- A text field that only splits on whitespace for exact matching of words -->
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">

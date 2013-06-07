@@ -969,12 +969,18 @@
          updateRequestProcessorChains that can be used by name 
          on each Update Request
       -->
-    <!--
        <lst name="defaults">
-         <str name="update.chain">dedupe</str>
+         <str name="update.chain">uuid</str>
        </lst>
-       -->
   </requestHandler>
+
+    <!-- for generating unique ids -->
+    <updateRequestProcessorChain name="uuid">
+      <processor class="solr.UUIDUpdateProcessorFactory">
+          <str name="fieldName">id</str>
+      </processor>
+      <processor class="solr.RunUpdateProcessorFactory" />
+    </updateRequestProcessorChain>
 
   <!-- for back compat with clients using /update/json and /update/csv -->  
   <requestHandler name="/update/json" class="solr.JsonUpdateRequestHandler">
@@ -1675,6 +1681,9 @@
       <processor class="solr.RunUpdateProcessorFactory" />
     </updateRequestProcessorChain>
   -->
+
+
+
  
   <!-- Response Writers
 
