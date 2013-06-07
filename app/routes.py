@@ -23,7 +23,7 @@ def audit(page=0):
     '''
     tweets = app.parrott.memory.recall_unaudited(page)
     return render_template('audit.html',
-            tweets=tweets)
+            tweets=tweets, page=page)
 
 @app.route('/classify', methods=['GET','POST'])
 def classify():

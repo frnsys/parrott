@@ -9,4 +9,9 @@
   {% endfor %}
 </ul>
 
+{% if page > 0 %}
+    <a href="{{url_for('audit',page=page-1)}}">Prev</a>
+{% endif %}
+<a href="{{url_for('audit',page=page+1)}}">Next</a>
+
 {% endblock %}
