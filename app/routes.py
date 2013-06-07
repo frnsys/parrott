@@ -14,13 +14,13 @@ def audited():
     '''
     app.parrott.memory.recall_audited()
 
-@app.route('/audit')
-def audit():
+@app.route('/audit/')
+@app.route('/audit/<int:page>')
+def audit(page=0):
     '''
     Get latest unaudited Tweets
     for auditing.
     '''
-    page = int(request.args.get('page', '0'))
     tweets = app.parrott.memory.recall_unaudited(page)
     return render_template('audit.html',
             tweets=tweets)
