@@ -4,3 +4,5 @@ parrott-env/
 config.json
 *.tgz
 ref/
+solr/memory/tweets/data/
+solr/logs/
