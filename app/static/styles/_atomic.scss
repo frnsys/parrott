@@ -1,0 +1,56 @@
+/* ==========================================
+	 Atomic 0.0.1
+
+	 Atomic is inspired by of
+	 Harry Roberts' wonderful Intuit.css.
+	 (http://goo.gl/ugFpA)
+
+	 Copyright 2013 Francis Tseng
+	 Released under the MIT License
+	 ========================================== */
+
+
+/* ==========================================
+	 Configure stuff here.
+	 ========================================== */
+
+// ========================================== CONFIG
+$primary-color:#004b65;
+$secondary-color:#ee4e22;
+$background-color:#f4f4ef;
+$error-color:#DD4343;
+$warning-color:#E2E942;
+$success-color:#26CA7B;
+$primary-type: Verdana, Geneva, sans-serif;
+$baseline-type-size: 16px;
+$selection-background: #222;
+
+// ========================================== CORE
+@import "core/core";
+
+// ========================================== EXTENSIONS
+// Enable or disable here.
+@import "exts/icons";
+@import "exts/sticky_footer";
+@import "exts/geometry";
+
+// ========================================= ICONS
+// Add Font Custom icon classes here.
+.icon-add:before { content: "\f100"; }
+.icon-arrow-down:before { content: "\f101"; }
+.icon-arrow-up:before { content: "\f102"; }
+.icon-check:before { content: "\f103"; }
+.icon-close:before { content: "\f104"; }
+.icon-info:before { content: "\f105"; }
+.icon-lock:before { content: "\f106"; }
+.icon-question:before { content: "\f107"; }
+.icon-redo:before { content: "\f108"; }
+.icon-undo:before { content: "\f109"; }
+
+
+// Make life easier
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}

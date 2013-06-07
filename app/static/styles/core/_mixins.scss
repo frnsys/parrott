@@ -1,0 +1,12 @@
+// ========================================== MIXINS
+@mixin vendor($name, $argument) {
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+  #{$name}: $argument;
+}
+
+@mixin transition($target: all, $duration: 0.2s) {
+	@include vendor(transition, $target $duration ease-in-out);
+}
