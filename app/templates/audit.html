@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1>Parrott</h1>
+{{tweets|length}} results
 <ul>
   {% for tweet in tweets %}
     <li>{{tweet}}</li>
