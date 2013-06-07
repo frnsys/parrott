@@ -6,3 +6,4 @@ config.json
 ref/
 solr/memory/tweets/data/
 solr/logs/
+.sass-cache/
