@@ -6,4 +6,4 @@ from app import routes
 
 # Create the Parrott!
 from parrott import Parrott
-parrott = Parrott()
+app.parrott = Parrott()
