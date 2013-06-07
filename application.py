@@ -1,4 +1,4 @@
-#!parrott-env/bin/python
+#!./parrott-env/bin/python
 
 from app import app, collector
 from apscheduler.scheduler import Scheduler
@@ -9,4 +9,5 @@ if __name__ == '__main__':
     scheduler.add_interval_job(collector.collect(), minutes=30)
     scheduler.start()
 
+    # Awaken the Parrott
     app.run(debug=True)
