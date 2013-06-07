@@ -970,7 +970,8 @@
          on each Update Request
       -->
        <lst name="defaults">
-         <str name="update.chain">uuid</str>
+         <!-- <str name="update.chain">uuid</str> -->
+         <str name="update.chain">dedup</str>
        </lst>
   </requestHandler>
 
@@ -1628,19 +1629,17 @@
        uniqueness based on that anyway.  
        
     -->
-  <!--
      <updateRequestProcessorChain name="dedupe">
        <processor class="solr.processor.SignatureUpdateProcessorFactory">
          <bool name="enabled">true</bool>
          <str name="signatureField">id</str>
          <bool name="overwriteDupes">false</bool>
-         <str name="fields">name,features,cat</str>
+         <str name="fields">tweet,user</str>
          <str name="signatureClass">solr.processor.Lookup3Signature</str>
        </processor>
        <processor class="solr.LogUpdateProcessorFactory" />
        <processor class="solr.RunUpdateProcessorFactory" />
      </updateRequestProcessorChain>
-    -->
   
   <!-- Language identification
 
