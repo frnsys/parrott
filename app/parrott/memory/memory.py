@@ -21,28 +21,32 @@ class Memory:
         Retrieves unaudited Tweets.
         Amount returned depends on Solr's configuration.
         '''
-        return self.memory.query(audited=False).paginate(start=page,rows=10).execute()
+        per_page = 10
+        return self.memory.query(audited=False).paginate(start=page*per_page, rows=per_page).execute()
 
     def recall_audited(self, page):
         '''
         Retrieves audited Tweets.
         Amount returned depends on Solr's configuration.
         '''
-        return self.memory.query(audited=True).paginate(start=page,rows=10).execute()
+        per_page = 10
+        return self.memory.query(audited=True).paginate(start=page*per_page, rows=per_page).execute()
 
     def recall_positive(self, page):
         '''
         Retrieves positive (audited) Tweets.
         Amount returned depends on Solr's configuration.
         '''
-        return self.memory.query(audited=True, positive=True).paginate(start=page,rows=10).execute()
+        per_page = 10
+        return self.memory.query(audited=True, positive=True).paginate(start=page*per_page, rows=per_page).execute()
 
     def recall_negative(self, page):
         '''
         Retrieves negative (audited) Tweets.
         Amount returned depends on Solr's configuration.
         '''
-        return self.memory.query(audited=True, positive=False).paginate(start=page,rows=10).execute()
+        per_page = 10
+        return self.memory.query(audited=True, positive=False).paginate(start=page*per_page, rows=per_page).execute()
 
 
     def forget(self, tweet):
