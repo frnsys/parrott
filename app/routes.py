@@ -15,12 +15,15 @@ def audited(page=0):
     '''
     app.parrott.memory.recall_audited(page)
 
-@app.route('/audit/')
-@app.route('/audit/<int:page>')
+@app.route('/audit/', methods=['GET', 'POST'])
+@app.route('/audit/<int:page>', methods=['GET', 'POST'])
 def audit(page=0):
     '''
-    Get latest unaudited Tweets
+    GET latest unaudited Tweets
     for auditing.
+
+    POST a tweet as positive or
+    negative.
     '''
     tweets = app.parrott.memory.recall_unaudited(page)
     return render_template('audit.html',
