@@ -26,8 +26,8 @@ def tweets():
     tweets = []
     for tweet in twitter.home_timeline():
         tweets.append({
-            'tweet': tweet.text.encode('utf-8'),
-            'user': tweet.user.screen_name.encode('utf-8'),
+            'tweet': tweet.text,
+            'user': tweet.user.screen_name,
             'links': [link['expanded_url'] for link in tweet.entities['urls']]
             })
 

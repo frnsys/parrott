@@ -9,7 +9,7 @@ Interface for Solr.
 import httplib2
 import sunburnt
 
-SOLR_URL = "http://localhost:8983/solr/master"
+SOLR_URL = "http://localhost:8983/solr/"
 
 class Memory:
     def __init__(self):
@@ -58,6 +58,6 @@ class Memory:
         Args:
             tweet (string): the Tweet content
         '''
-        self.memory.add({'tweet': tweet})
+        self.memory.add(tweet)
         self.memory.commit()
 
