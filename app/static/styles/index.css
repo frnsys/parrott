@@ -736,5 +736,8 @@ html, body {
   background: #222222;
   color: #fff; }
 
+a, a:visited {
+  color: #34bfac; }
+
 .tweets li {
   padding: 1em 2em; }
