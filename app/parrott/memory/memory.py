@@ -21,7 +21,7 @@ class Memory:
         Retrieves unaudited Tweets.
         Amount returned depends on Solr's configuration.
         '''
-        return self.memory.query(audited=False).paginate(start=page,rows=10)
+        return self.memory.query(audited=False).paginate(start=page,rows=10).execute()
 
     def recall_audited(self):
         '''
