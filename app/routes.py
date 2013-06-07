@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, request
 from forms import ClassifyForm
 from app import app
 
@@ -20,7 +20,8 @@ def audit():
     Get latest unaudited Tweets
     for auditing.
     '''
-    tweets = app.parrott.memory.recall_unaudited()
+    page = int(request.args.get('page', '0'))
+    tweets = app.parrott.memory.recall_unaudited(page)
     return render_template('audit.html',
             tweets=tweets)
 
