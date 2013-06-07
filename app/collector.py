@@ -28,7 +28,8 @@ def tweets():
         tweets.append({
             'tweet': tweet.text,
             'user': tweet.user.screen_name,
-            'links': [link['expanded_url'] for link in tweet.entities['urls']]
+            'links': [link['expanded_url'] for link in tweet.entities['urls']],
+            'audited': False
             })
 
     return tweets
