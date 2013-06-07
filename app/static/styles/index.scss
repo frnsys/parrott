@@ -16,3 +16,14 @@
 /* ==========================================
 	 Your Styles
 	 ========================================== */
+
+html, body {
+    background:$background-color;
+    color:#fff;
+}
+
+.tweets {
+    li {
+        padding:1em 2em;
+    }
+}

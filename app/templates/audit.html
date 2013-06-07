@@ -3,9 +3,9 @@
 
 <h1>Parrott</h1>
 {{tweets|length}} results
-<ul>
+<ul class="tweets">
   {% for tweet in tweets %}
-    <li>{{tweet}}</li>
+    <li>{{tweet.tweet}}</li>
   {% endfor %}
 </ul>
 
