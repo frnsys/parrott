@@ -8,6 +8,10 @@ from app import routes
 from parrott import Parrott
 app.parrott = Parrott()
 
-tweet_id = 'b7aac0e9-5f3f-4a56-abc2-6653ba961d5b'
-tweet = app.parrott.memory.recall(tweet_id) # check if this returns a list or a single object
-import pdb; pdb.set_trace()
+# This works!
+tweet_id='544eea61-a583-4ec9-af50-7c40ff47671f'
+# Fetch current tweet
+tweet = app.parrott.memory.recall(tweet_id)
+# If a matching tweet was found, audit as positive
+if tweet:
+    app.parrott.audit(tweet, True) # test auditing

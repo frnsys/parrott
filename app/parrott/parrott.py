@@ -69,7 +69,13 @@ class Parrott:
         # Solr cannot "update", just delete & add.
         self.memory.forget(tweet)
 
-        # Update and re-add.
+        # Update the tweet.
         tweet.update({'positive':pos, 'audited':True})
-        self.memory.add(tweet)
+
+        # Clear id and _version_ to prevent conflicts.
+        del tweet['id']
+        del tweet['_version_']
+
+        # Re-memorize.
+        self.memory.memorize(tweet)
 

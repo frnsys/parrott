@@ -13,7 +13,9 @@ def audited(page=0):
     '''
     View latest audited Tweets.
     '''
-    app.parrott.memory.recall_audited(page)
+    tweets = app.parrott.memory.recall_audited(page)
+    return render_template('audited.html',
+        tweets=tweets, page=page)
 
 @app.route('/audit/', methods=['GET', 'POST'])
 @app.route('/audit/<int:page>', methods=['GET', 'POST'])
@@ -29,8 +31,11 @@ def audit(page=0):
         tweet_id = request.form['id']
         positive = request.form['positive'] # bool
         tweet = app.parrott.memory.recall(tweet_id)
-        app.parrott.audit(tweet, positive) # test auditing
-        return jsonify(success=True)
+        if tweet:
+            app.parrott.audit(tweet, positive)
+            return jsonify(success=True)
+        else:
+            return jsonify(success=False,message='No matching tweet was found.')
     else:
         tweets = app.parrott.memory.recall_unaudited(page)
         return render_template('audit.html',
