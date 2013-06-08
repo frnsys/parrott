@@ -25,8 +25,15 @@ def audit(page=0):
     POST a tweet as positive or
     negative.
     '''
-    tweets = app.parrott.memory.recall_unaudited(page)
-    return render_template('audit.html',
+    if request.method == 'POST':
+        tweet_id = request.form['id']
+        positive = request.form['positive'] # bool
+        tweet = app.parrott.memory.recall(tweet_id)
+        app.parrott.audit(tweet, positive) # test auditing
+        return jsonify(success=True)
+    else:
+        tweets = app.parrott.memory.recall_unaudited(page)
+        return render_template('audit.html',
             tweets=tweets, page=page)
 
 @app.route('/classify', methods=['GET','POST'])

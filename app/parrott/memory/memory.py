@@ -55,6 +55,13 @@ class Memory:
         '''
         self.memory.delete(tweet)
 
+    def recall(self, tweet_id):
+        '''
+        Retrieves a Tweet by id from Solr.
+        '''
+        response = self.memory.query(id=tweet_id).execute()
+        return response.result.docs[0]
+
     def memorize(self, tweet):
         '''
         Adds a Tweet to Solr.

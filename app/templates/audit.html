@@ -5,12 +5,12 @@
 {{tweets|length}} results
 <ul class="tweets">
   {% for tweet in tweets %}
-    <li>{{tweet.tweet}}</li>
+    <li data-id="{{tweet.id}}">{{tweet.tweet}}</li>
   {% endfor %}
 </ul>
 
 {% if page > 0 %}
-    <a href="{{url_for('audit',page=page-1)}}">Prev</a>
+  <a href="{{url_for('audit',page=page-1)}}">Prev</a>
 {% endif %}
 <a href="{{url_for('audit',page=page+1)}}">Next</a>
 
