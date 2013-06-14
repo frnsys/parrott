@@ -9,7 +9,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<div class="books"></div>');
+buf.push('\n<div class="tweets"></div>');
 }
 return buf.join("");
 };
@@ -21,7 +21,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('' + escape((interp = book.title) == null ? '' : interp) + ' ( ' + escape((interp = book.author) == null ? '' : interp) + ' ) ' + escape((interp = book.slug) == null ? '' : interp) + '');
+buf.push('' + escape((interp = tweet.user) == null ? '' : interp) + ' ( ' + escape((interp = tweet.tweet) == null ? '' : interp) + ' )');
 }
 return buf.join("");
 };
@@ -45,7 +45,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<h1>' + escape((interp = book.title) == null ? '' : interp) + '</h1>\n<h5>' + escape((interp = book.author) == null ? '' : interp) + '</h5>published ' + escape((interp = book.year) == null ? '' : interp) + '');
+buf.push('\n<h1>' + escape((interp = tweet.user) == null ? '' : interp) + '</h1>\n<h5>' + escape((interp = tweet.tweet) == null ? '' : interp) + '</h5>');
 }
 return buf.join("");
 };

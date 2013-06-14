@@ -3,12 +3,13 @@ define([
 			 'app',
 
 			 // Modules.
-			 'modules/book'
-], function(app, Book) {
+			 'modules/tweet'
+], function(app, Tweet) {
 	var Router = Backbone.Router.extend({
 		initialize: function() {
+            console.log("hello");
 			var collections = {
-				books: new Book.Collection()
+				tweets: new Tweet.Collection()
 			}
 
 			// Attach collections to the router
@@ -18,36 +19,26 @@ define([
 
 		routes: {
 			'': 'index',
-			'book/:slug': 'book'
+			'tweet/:id': 'tweet'
 		},
 
 		index: function() {
+            console.log("index");
 			// Create main layout (main.jade)
 			app.useLayout('main').setViews({
-				".books": new Book.Views.List({ books: this.books })
+				".tweets": new Tweet.Views.List({ tweets: this.tweets })
 			}).render();
 
-			this.books.fetch({ reset: true });
+			this.tweets.fetch({ reset: true });
 		},
 
-		book: function(slug) {
-			// There is probably a better/proper
-			// way to do this.
-			var books = this.books;
-			books.fetch({
-				success: function() {
-					var book = books.get(slug);
-					app.useLayout("main").setViews({
-						".books": new Book.Views.Single({ model: book })
-					}).render();
-				}
-			});
+		tweet: function(id) {
 		},
 
 		reset: function() {
 			// Reset collections to initial state
-			if (this.books.length) {
-				this.books.reset();
+			if (this.tweets.length) {
+				this.tweets.reset();
 			}
 		},
 

@@ -17,15 +17,9 @@ function(app) {
 
         parse: function(response) {
             return response.items
-        }
+        },
 
 		initialize: function() {
-			this.slugify();
-			this.on("change:title", this.slugify);
-		},
-
-		slugify: function() {
-			this.set("slug", _.slugify( this.get("title") ))
 		}
 	});
 
@@ -34,12 +28,13 @@ function(app) {
 
 		// Where to fetch the data from
 		url: function() {
-			return "/data/tweets.json";
+			return "/api/tweet";
 		},
 
 		// How to handle the fetched data
-		parse: function(obj) {
-			return obj;
+		parse: function(response) {
+            console.log(response);
+			return response;
 		},
 
 		initialize: function(models, options) {
