@@ -2,6 +2,7 @@ from flask import render_template, flash, redirect, request
 from forms import ClassifyForm
 from app import app
 
+
 @app.route('/')
 @app.route('/index')
 def index():

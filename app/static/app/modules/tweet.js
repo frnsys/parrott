@@ -5,15 +5,19 @@ function(app) {
 
 	// Create a module based off
 	// the app template (in app.js)
-	var Book = app.module();
+	var Tweet = app.module();
 
-	Book.Model = Backbone.Model.extend({
-		idAttribute: "slug",
-
+	Tweet.Model = Backbone.Model.extend({
 		defaults: {
-			author: "",
-			title: "",
+			tweet: "",
+			user: "",
+            links: [],
+            audited: false
 		},
+
+        parse: function(response) {
+            return response.items
+        }
 
 		initialize: function() {
 			this.slugify();
@@ -25,12 +29,12 @@ function(app) {
 		}
 	});
 
-	Book.Collection = Backbone.Collection.extend({
-		model: Book.Model,
+	Tweet.Collection = Backbone.Collection.extend({
+		model: Tweet.Model,
 
 		// Where to fetch the data from
 		url: function() {
-			return "/data/books.json";
+			return "/data/tweets.json";
 		},
 
 		// How to handle the fetched data
@@ -42,24 +46,24 @@ function(app) {
 		}
 	});
 
-	Book.Views.Item = Backbone.View.extend({
-		template:"book/item",
+	Tweet.Views.Item = Backbone.View.extend({
+		template:"tweet/item",
 		tagName:"li",
 
 		// The data that gets passed to the view
 		serialize: function() {
 			return {
-				book: this.model.toJSON()
+				tweet: this.model.toJSON()
 			};
 		},
 
 		// Bind some events
 		events: {
-			click: "showBook"
+			click: "showtweet"
 		},
 
-		showBook: function(ev) {
-			app.router.go("book", this.model.get("slug"));
+		showtweet: function(ev) {
+			app.router.go("tweet", this.model.get("slug"));
 		},
 
 		// Do stuff before the view is rendered
@@ -72,15 +76,15 @@ function(app) {
 		}
 	});
 
-	Book.Views.List = Backbone.View.extend({
-		template: "book/list",
-		className: "book-list",
+	Tweet.Views.List = Backbone.View.extend({
+		template: "tweet/list",
+		className: "tweet-list",
 
 		// The data that gets passed to the view
 		serialize: function() {
 			return {
-				collection: this.options.books,
-				count: this.options.books.length
+				collection: this.options.tweets,
+				count: this.options.tweets.length
 			};
 		},
 
@@ -88,12 +92,12 @@ function(app) {
 		beforeRender: function() {
 			var view = this;
 
-			// For each book in collection
-			this.options.books.each(function(book) {
+			// For each tweet in collection
+			this.options.tweets.each(function(tweet) {
 
-				// Insert a Book item view with book to the ul
-				view.insertView("ul", new Book.Views.Item({
-					model: book
+				// Insert a Tweet item view with tweet to the ul
+				view.insertView("ul", new Tweet.Views.Item({
+					model: tweet
 				}));
 
 			});
@@ -101,7 +105,7 @@ function(app) {
 
 		initialize: function() {
 			// Listen to some events
-			this.listenTo(this.options.books, {
+			this.listenTo(this.options.tweets, {
 				"reset": function() {
 					this.render();
 				}
@@ -109,18 +113,18 @@ function(app) {
 		}
 	});
 
-	Book.Views.Single = Backbone.View.extend({
-		template: "book/single",
-		className: "single-book",
+	Tweet.Views.Single = Backbone.View.extend({
+		template: "tweet/single",
+		className: "single-tweet",
 		tagName:"section",
 
 		serialize: function() {
 			return {
-				book: this.model.toJSON()
+				tweet: this.model.toJSON()
 			};
 		}
 	});
 
 	// Return the module for AMD compliance
-	return Book;
+	return Tweet;
 });

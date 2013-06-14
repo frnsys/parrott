@@ -1,0 +1,25 @@
+{
+  "fonts": [
+    "fontcustom_438ca2b1a9a9b5b5a11f92a8f178be8f.ttf",
+    "fontcustom_438ca2b1a9a9b5b5a11f92a8f178be8f.woff",
+    "fontcustom_438ca2b1a9a9b5b5a11f92a8f178be8f.eot",
+    "fontcustom_438ca2b1a9a9b5b5a11f92a8f178be8f.svg"
+  ],
+  "templates": [
+    "fontcustom.css",
+    "fontcustom-preview.html"
+  ],
+  "file_name": "fontcustom_438ca2b1a9a9b5b5a11f92a8f178be8f",
+  "glyphs": [
+    "add",
+    "arrow-down",
+    "arrow-up",
+    "check",
+    "close",
+    "info",
+    "lock",
+    "question",
+    "redo",
+    "undo"
+  ]
+}
