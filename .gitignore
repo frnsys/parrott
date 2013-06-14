@@ -7,3 +7,4 @@ ref/
 solr/memory/tweets/data/
 solr/logs/
 .sass-cache/
+node_modules/
