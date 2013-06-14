@@ -57,8 +57,10 @@ function(app) {
 		},
 
 		delete: function() {
-            console.log("delete");
-            this.model.destroy()
+            if ( confirm("Are you sure you want to delete this tweet?") ) {
+                this.model.destroy();
+                this.$el.fadeOut();
+            }
 		}
 
 	});

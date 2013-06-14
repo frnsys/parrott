@@ -7,7 +7,7 @@ class TweetAPI(MethodView):
     # Viewing a tweet.
     def get(self, tweet_id):
         if tweet_id is None:
-            tweets = app.parrott.memory.recall_audited(0)
+            tweets = app.parrott.memory.recall_unaudited(0)
             return jsonify(data=tweets.result.docs)
         else:
             tweet = app.parrott.memory.recall(tweet_id)
@@ -49,26 +49,24 @@ app.add_url_rule('/api/tweet/<tweet_id>',
 def index():
     return render_template('index.html')
 
-@app.route('/audited/')
-@app.route('/audited/<int:page>')
+@app.route('/api/audited/')
+@app.route('/api/audited/<int:page>')
 def audited(page=0):
     '''
     View latest audited Tweets.
     '''
     tweets = app.parrott.memory.recall_audited(page)
-    return render_template('audited.html',
-        tweets=tweets, page=page)
+    return jsonify(data=tweets.result.docs, page=page)
 
-@app.route('/audit/')
-@app.route('/audit/<int:page>')
+@app.route('/api/audit/')
+@app.route('/api/audit/<int:page>')
 def audit(page=0):
     '''
     Get latest unaudited Tweets
     for auditing.
     '''
     tweets = app.parrott.memory.recall_unaudited(page)
-    return render_template('audit.html',
-        tweets=tweets, page=page)
+    return jsonify(data=tweets.result.docs, page=page)
 
 @app.route('/classify', methods=['GET','POST'])
 def classify():
