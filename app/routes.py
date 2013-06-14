@@ -27,6 +27,8 @@ def audit(page=0):
     POST a tweet as positive or
     negative.
     '''
+
+    # POST: audits a tweet as positive or negative.
     if request.method == 'POST':
         tweet_id = request.form['id']
         positive = request.form['positive'] # bool
@@ -36,6 +38,8 @@ def audit(page=0):
             return jsonify(success=True)
         else:
             return jsonify(success=False,message='No matching tweet was found.')
+
+    # GET: lists unaudited tweets.
     else:
         tweets = app.parrott.memory.recall_unaudited(page)
         return render_template('audit.html',
