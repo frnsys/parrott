@@ -16,7 +16,7 @@ function(app) {
 		},
 
         parse: function(response) {
-            return response.items
+            return response
         },
 
 		initialize: function() {
@@ -33,8 +33,7 @@ function(app) {
 
 		// How to handle the fetched data
 		parse: function(response) {
-            console.log(response);
-			return response;
+			return response.data;
 		},
 
 		initialize: function(models, options) {

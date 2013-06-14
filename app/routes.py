@@ -7,7 +7,8 @@ class TweetAPI(MethodView):
     # Viewing a tweet.
     def get(self, tweet_id):
         if tweet_id is None:
-            return jsonify(tweet='hi')
+            tweets = app.parrott.memory.recall_audited(0)
+            return jsonify(data=tweets.result.docs)
         else:
             tweet = app.parrott.memory.recall(tweet_id)
             return jsonify(tweet=tweet)
