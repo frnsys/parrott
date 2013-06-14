@@ -21,7 +21,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('' + escape((interp = tweet.user) == null ? '' : interp) + ' ( ' + escape((interp = tweet.tweet) == null ? '' : interp) + ' )');
+buf.push('' + escape((interp = tweet.user) == null ? '' : interp) + ' ( ' + escape((interp = tweet.tweet) == null ? '' : interp) + ' )<span class="delete">delete me</span>');
 }
 return buf.join("");
 };

@@ -53,21 +53,14 @@ function(app) {
 
 		// Bind some events
 		events: {
-			click: "showtweet"
+			'click .delete': 'delete'
 		},
 
-		showtweet: function(ev) {
-			app.router.go("tweet", this.model.get("slug"));
-		},
-
-		// Do stuff before the view is rendered
-		beforeRender: function() {
-			// If this item has been activated...
-			if ( app.active === this.model ) {
-				this.$el.siblings().removeClass("active");
-				this.$el.addClass("active");
-			}
+		delete: function() {
+            console.log("delete");
+            this.model.destroy()
 		}
+
 	});
 
 	Tweet.Views.List = Backbone.View.extend({
