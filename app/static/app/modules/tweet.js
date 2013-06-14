@@ -53,7 +53,9 @@ function(app) {
 
 		// Bind some events
 		events: {
-			'click .delete': 'delete'
+			'click .delete': 'delete',
+            'click .mark-positive': 'markPositive',
+            'click .mark-negative': 'markNegative'
 		},
 
 		delete: function() {
@@ -61,7 +63,23 @@ function(app) {
                 this.model.destroy();
                 this.$el.fadeOut();
             }
-		}
+		},
+
+        markPositive: function() {
+            this.model.set({
+                'audited': true,
+                'positive': true
+            });
+            this.model.save();
+        },
+
+        markNegative: function() {
+            this.model.set({
+                'audited': true,
+                'positive': false
+            });
+            this.model.save();
+        }
 
 	});
 

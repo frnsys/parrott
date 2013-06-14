@@ -3,9 +3,12 @@ from forms import ClassifyForm
 from flask.views import MethodView
 from app import app
 
+# Create RESTful routing for Tweet
+# using Flask's MethodView.
 class TweetAPI(MethodView):
     # Viewing a tweet.
     def get(self, tweet_id):
+        # If no id is specified...
         if tweet_id is None:
             tweets = app.parrott.memory.recall_unaudited(0)
             return jsonify(data=tweets.result.docs)
@@ -30,6 +33,7 @@ class TweetAPI(MethodView):
         app.parrott.audit(tweet, positive)
         return jsonify(data=request.json)
 
+# Build the actual REST routes.
 tweet_view = TweetAPI.as_view('tweet')
 app.add_url_rule('/api/tweet/',
                 defaults={'tweet_id': None},
@@ -44,6 +48,8 @@ app.add_url_rule('/api/tweet/<tweet_id>',
 
 
 
+# Serve the index.html page,
+# which will start require.js.
 @app.route('/')
 @app.route('/index')
 def index():

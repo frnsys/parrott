@@ -21,7 +21,15 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('' + escape((interp = tweet.user) == null ? '' : interp) + ' ( ' + escape((interp = tweet.tweet) == null ? '' : interp) + ' )<span class="delete">delete me</span>');
+buf.push('' + escape((interp = tweet.user) == null ? '' : interp) + ' ( ' + escape((interp = tweet.tweet) == null ? '' : interp) + ' )<span class="delete">delete me</span><span class="mark-positive">positive</span><span class="mark-negative">negative</span>');
+if ( tweet.positive)
+{
+buf.push('+');
+}
+else
+{
+buf.push('-');
+}
 }
 return buf.join("");
 };
