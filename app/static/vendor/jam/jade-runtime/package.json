@@ -1,0 +1,31 @@
+{
+  "name": "jade-runtime",
+  "version": "0.0.1",
+  "description": "Jade runtime",
+  "keywords": [
+    "jade",
+    "runtime"
+  ],
+  "dependencies": {},
+  "maintainers": [
+    {
+      "name": "José F. Romaniello",
+      "email": "jfromaniello@gmail.com",
+      "web": "http://joseoncode.com" 
+    } 
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git", 
+      "url": "https://github.com/jfromaniello/jam-jade-runtime.git"
+    }
+  ],
+  "github": "http://github.com/jfromaniello/jam-jade-runtime",
+  "main": "jade.runtime.js"
+}
