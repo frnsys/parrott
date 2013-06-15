@@ -1,6 +1,9 @@
 ul
-if page > 0
-    - var prev_page = path + (parseInt(page) - 1)
-    a(href=prev_page) Prev
-- var next_page = path + (parseInt(page) + 1)
-a(href=next_page) Next
+.pagination
+    if count > 0
+        if page > 0
+            - var prev_page = path + (parseInt(page) - 1)
+            a(href=prev_page) Prev
+        if count == 10
+            - var next_page = path + (parseInt(page) + 1)
+            a(href=next_page) Next

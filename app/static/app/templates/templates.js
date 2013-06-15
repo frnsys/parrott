@@ -65,7 +65,9 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<ul></ul>');
+buf.push('\n<ul></ul>\n<div class="pagination">');
+if ( count > 0)
+{
 if ( page > 0)
 {
  var prev_page = path + (parseInt(page) - 1)
@@ -73,22 +75,15 @@ buf.push('<a');
 buf.push(attrs({ 'href':(prev_page) }, {"href":true}));
 buf.push('>Prev</a>');
 }
+if ( count == 10)
+{
  var next_page = path + (parseInt(page) + 1)
 buf.push('<a');
 buf.push(attrs({ 'href':(next_page) }, {"href":true}));
 buf.push('>Next</a>');
 }
-return buf.join("");
-};
-
-this["JST"]["app/templates/tweet/single"] = function anonymous(locals, attrs, escape, rethrow, merge
-/**/) {
-attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-var buf = [];
-with (locals || {}) {
-var interp;
-var __indent = [];
-buf.push('\n<h1>' + escape((interp = tweet.user) == null ? '' : interp) + '</h1>\n<h5>' + escape((interp = tweet.tweet) == null ? '' : interp) + '</h5>');
+}
+buf.push('\n</div>');
 }
 return buf.join("");
 };

@@ -124,18 +124,6 @@ function(app) {
 		}
 	});
 
-	Tweet.Views.Single = Backbone.View.extend({
-		template: "tweet/single",
-		className: "single-tweet",
-		tagName:"section",
-
-		serialize: function() {
-			return {
-				tweet: this.model.toJSON()
-			};
-		}
-	});
-
 	// Return the module for AMD compliance.
 	return Tweet;
 });
