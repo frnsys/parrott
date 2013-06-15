@@ -9,7 +9,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<h2>Audit Tweets</h2>\n<div class="tweets"></div>');
+buf.push('\n<h2><span>Audit Tweets</span></h2>\n<div class="tweets"></div>');
 }
 return buf.join("");
 };
@@ -21,7 +21,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<h2>Audited Tweets</h2>\n<div class="tweets"></div>');
+buf.push('\n<h2><span>Audited Tweets</span></h2>\n<div class="tweets"></div>');
 }
 return buf.join("");
 };
@@ -45,14 +45,20 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('' + escape((interp = tweet.user) == null ? '' : interp) + ' ( ' + escape((interp = tweet.tweet) == null ? '' : interp) + ' )<span class="delete">delete me</span><span class="mark-positive">positive</span><span class="mark-negative">negative</span>');
+buf.push('' + escape((interp = tweet.tweet) == null ? '' : interp) + ' – <span class="user">');
+var __val__ = tweet.user
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</span>\n<div class="actions"><span class="delete icon-close"></span><span class="mark-negative icon-minus"></span><span class="mark-positive icon-plus"></span></div>');
+if ( tweet.audited)
+{
 if ( tweet.positive)
 {
-buf.push('+');
+buf.push('\n<div class="marker positive"></div>');
 }
 else
 {
-buf.push('-');
+buf.push('\n<div class="marker negative"></div>');
+}
 }
 }
 return buf.join("");

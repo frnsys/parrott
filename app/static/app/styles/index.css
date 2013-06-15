@@ -2,6 +2,9 @@
  * Load Atomic
  * ========================================== */
 /* ==========================================
+ * Config
+ * ========================================== */
+/* ==========================================
 	 Atomic 0.0.1
 
 	 Atomic is inspired by of
@@ -10,9 +13,6 @@
 
 	 Copyright 2013 Francis Tseng
 	 Released under the MIT License
-	 ========================================== */
-/* ==========================================
-	 Configure stuff here.
 	 ========================================== */
 /* normalize.css v2.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
@@ -382,10 +382,12 @@ body {
  */
 ::-moz-selection {
   background: #222222;
+  color: #fff;
   text-shadow: none; }
 
 ::selection {
   background: #222222;
+  color: #fff;
   text-shadow: none; }
 
 /*
@@ -632,13 +634,14 @@ img {
   font-weight: normal;
   font-style: normal; }
 
-.icon-add:before,
 .icon-arrow-down:before,
 .icon-arrow-up:before,
 .icon-check:before,
 .icon-close:before,
 .icon-info:before,
 .icon-lock:before,
+.icon-minus:before,
+.icon-plus:before,
 .icon-question:before,
 .icon-redo:before,
 .icon-undo:before {
@@ -652,35 +655,38 @@ img {
   display: inline-block;
   text-decoration: inherit; }
 
-.icon-add:before {
+.icon-arrow-down:before {
   content: "\f100"; }
 
-.icon-arrow-down:before {
+.icon-arrow-up:before {
   content: "\f101"; }
 
-.icon-arrow-up:before {
+.icon-check:before {
   content: "\f102"; }
 
-.icon-check:before {
+.icon-close:before {
   content: "\f103"; }
 
-.icon-close:before {
+.icon-info:before {
   content: "\f104"; }
 
-.icon-info:before {
+.icon-lock:before {
   content: "\f105"; }
 
-.icon-lock:before {
+.icon-minus:before {
   content: "\f106"; }
 
-.icon-question:before {
+.icon-plus:before {
   content: "\f107"; }
 
-.icon-redo:before {
+.icon-question:before {
   content: "\f108"; }
 
-.icon-undo:before {
+.icon-redo:before {
   content: "\f109"; }
+
+.icon-undo:before {
+  content: "\f10a"; }
 
 html, body {
   height: 100%;
@@ -705,36 +711,6 @@ footer {
   -o-border-radius: 100em;
   border-radius: 100em; }
 
-.icon-add:before {
-  content: "\f100"; }
-
-.icon-arrow-down:before {
-  content: "\f101"; }
-
-.icon-arrow-up:before {
-  content: "\f102"; }
-
-.icon-check:before {
-  content: "\f103"; }
-
-.icon-close:before {
-  content: "\f104"; }
-
-.icon-info:before {
-  content: "\f105"; }
-
-.icon-lock:before {
-  content: "\f106"; }
-
-.icon-question:before {
-  content: "\f107"; }
-
-.icon-redo:before {
-  content: "\f108"; }
-
-.icon-undo:before {
-  content: "\f109"; }
-
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -747,11 +723,102 @@ footer {
  * Your Styles
  * ========================================== */
 html, body {
-  background: #222222;
-  color: white; }
+  background: #fafafa;
+  color: #111111; }
 
 a, a:visited {
-  color: #34bfac; }
+  -webkit-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background: #e42946;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  padding: 0.4em 1em;
+  margin: 0 0.2em; }
+  a:hover, a:visited:hover {
+    background: #cb1a35; }
 
-.tweets li {
-  padding: 1em 2em; }
+header {
+  text-align: center;
+  padding: 1em; }
+
+.pagination {
+  text-align: center;
+  padding: 1em 1em 4em 1em; }
+
+.logo {
+  width: 200px; }
+
+h2 {
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin: 4em 0; }
+  h2 span {
+    color: white;
+    background: #00a89c;
+    padding: 0.6em 1em;
+    border-radius: 4em; }
+
+.tweets {
+  max-width: 960px;
+  margin: 0 auto; }
+  .tweets li {
+    position: relative;
+    padding: 1em 8em 1em 2em;
+    background: #eaeaea;
+    margin: 0 0 1em 0;
+    border-radius: 1em; }
+
+.actions {
+  position: absolute;
+  right: 1em;
+  top: 35%; }
+  .actions span {
+    margin: 0 0.2em; }
+
+[class^='icon'],
+[class*=' icon'] {
+  -webkit-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border-radius: 100em;
+  padding: 0.4em 0.5em;
+  font-size: 0.8em;
+  color: white; }
+
+.icon-close {
+  background: #aaaaaa; }
+  .icon-close:hover {
+    background: #969696; }
+
+.icon-plus {
+  background: #42ae6f; }
+  .icon-plus:hover {
+    background: #37905c; }
+
+.icon-minus {
+  background: #e42946; }
+  .icon-minus:hover {
+    background: #cb1a35; }
+
+.user {
+  color: #999999; }
+
+.marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.6em;
+  height: 100%;
+  border-radius: 1em 0 0 1em; }
+  .marker.positive {
+    background: #42ae6f; }
+  .marker.negative {
+    background: #e42946; }

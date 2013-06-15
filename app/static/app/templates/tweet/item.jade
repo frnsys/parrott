@@ -1,8 +1,11 @@
-| #{tweet.user} ( #{tweet.tweet} )
-span.delete delete me
-span.mark-positive positive
-span.mark-negative negative
-if tweet.positive
-    | +
-else
-    | -
+| #{tweet.tweet} – 
+span.user= tweet.user
+.actions
+    span.delete.icon-close
+    span.mark-negative.icon-minus
+    span.mark-positive.icon-plus
+if tweet.audited
+    if tweet.positive
+        .marker.positive
+    else
+        .marker.negative

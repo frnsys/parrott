@@ -2,9 +2,25 @@
 	 Load Atomic
 	 ========================================== */
 
+/* ==========================================
+	 Config
+	 ========================================== */
+
+$primary-color: #004b65
+$secondary-color: #ee4e22
+$background-color: #fafafa
+$error-color: #DD4343
+$warning-color: #E2E942
+$success-color: #26CA7B
+$primary-type: Verdana, Geneva, sans-serif
+$baseline-type-size: 16px
+$selection-background: #222
+$link-color: #E42946
+$positive: #42AE6F
+$negative: #E42946
+
 // Configure Atomic in _atomic.scss
 @import "atomic"
-
 
 /* ==========================================
 	 Modules
@@ -19,11 +35,89 @@
 
 html, body
     background: $background-color
-    color: #fff
+    color: #111
 
 a, a:visited
-    color: $link-color
+    @include transition
+    color: #fff
+    background: $link-color
+    box-shadow: 2px 2px rgba(0,0,0,0.2)
+    text-decoration: none
+    padding: 0.4em 1em
+    margin: 0 0.2em
+    &:hover
+        background: darken($link-color, 8%)
+
+header
+    text-align: center
+    padding: 1em
+.pagination
+    text-align: center
+    padding: 1em 1em 4em 1em
+
+.logo
+    width: 200px
+
+h2
+    text-align: center
+    font-size: 0.8em
+    text-transform: uppercase
+    margin: 4em 0
+    span
+        color: #fff
+        background: #00A89C
+        padding: 0.6em 1em
+        border-radius: 4em
 
 .tweets
+    max-width: 960px
+    margin: 0 auto
     li
-        padding: 1em 2em
+        position: relative
+        padding: 1em 8em 1em 2em
+        background: #eaeaea
+        margin: 0 0 1em 0
+        border-radius: 1em
+
+.actions
+    position: absolute
+    right: 1em
+    top: 35%
+    span
+        margin: 0 0.2em
+
+[class^='icon'],
+[class*=' icon']
+    @include transition
+    cursor: pointer
+    border-radius: 100em
+    padding: 0.4em 0.5em
+    font-size: 0.8em
+    color: #fff
+.icon-close
+    background: #aaa
+    &:hover
+        background: darken(#aaa, 8%)
+.icon-plus
+    background: $positive
+    &:hover
+        background: darken($positive, 8%)
+.icon-minus
+    background: $negative
+    &:hover
+        background: darken($negative, 8%)
+
+.user
+    color: #999
+
+.marker
+    position: absolute
+    left: 0
+    top: 0
+    width: 0.6em
+    height: 100%
+    border-radius: 1em 0 0 1em
+    &.positive
+        background: $positive
+    &.negative
+        background: $negative
