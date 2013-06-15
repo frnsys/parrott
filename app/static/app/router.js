@@ -11,19 +11,22 @@ define([
 				tweets: new Tweet.Collection()
 			}
 
-			// Attach collections to the router
-			// i.e. this.books
+			// Attach collections to the router.
+			// i.e. this.tweets
 			_.extend(this, collections);
 		},
 
 		routes: {
 			'': 'index',
             'audited': 'audited',
-            'audit': 'audit'
+            'audited/:page': 'audited',
+            'audit': 'audit',
+            'audit/:page': 'audit'
 		},
 
 		index: function() {
-			// Create main layout (main.jade)
+            // Create and insert the view,
+            // using the 'main' layout (main.jade).
 			app.useLayout('main').setViews({
 				".tweets": new Tweet.Views.List({ tweets: this.tweets })
 			}).render();
@@ -34,42 +37,48 @@ define([
 			this.tweets.fetch({ reset: true });
 		},
 
-		audited: function() {
+		audited: function(page) {
+            var page = page || 0
+
             // Reset/empty out the collections.
             this.reset();
 
+            // Create and insert the view.
 			app.useLayout('main').setViews({
 				".tweets": new Tweet.Views.List({ tweets: this.tweets })
 			}).render();
 
             // Set the proper API endpoint
             // to fetch from.
-            this.tweets.url = '/api/audited';
+            this.tweets.url = '/api/audited/' + page.toString();
             this.tweets.fetch({ reset: true });
 		},
 
-        audit: function() {
+        audit: function(page) {
+            var page = page || 0
+
             // Reset/empty out the collections.
             this.reset();
 
+            // Create and insert the view.
 			app.useLayout('main').setViews({
 				".tweets": new Tweet.Views.List({ tweets: this.tweets })
 			}).render();
 
             // Set the proper API endpoint
             // to fetch from.
-            this.tweets.url = '/api/audit'
+            this.tweets.url = '/api/audit/' + page.toString();
             this.tweets.fetch({ reset: true });
         },
 
 		reset: function() {
-			// Reset collections to initial state
+			// Reset collections to initial state.
 			if (this.tweets.length) {
 				this.tweets.reset();
 			}
 		},
 
-		// Shortcut for building a url
+		// Shortcut for building a url.
 		go: function() {
 			return this.navigate(_.toArray(arguments).join("/"), true);
 		}

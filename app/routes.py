@@ -53,9 +53,17 @@ app.add_url_rule('/api/tweet/<tweet_id>',
 # which will start require.js.
 @app.route('/')
 @app.route('/index')
-@app.route('/audited')
-@app.route('/audit')
 def index():
+    return render_template('index.html')
+
+# Rendering the index for
+# Backbone to take over.
+# This is probably not the best way to do this.
+@app.route('/audited')
+@app.route('/audited/<int:page>')
+@app.route('/audit')
+@app.route('/audit/<int:page>')
+def backbone(page=0):
     return render_template('index.html')
 
 @app.route('/api/audited/')
