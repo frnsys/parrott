@@ -20,9 +20,10 @@ def tweets():
     Returns:
         List of Tweet texts
     '''
+    # Get the Twitter API.
     twitter = membrane.twitter.api()
 
-    # Collect tweets
+    # Collect tweets from the authenticated user's timeline.
     tweets = []
     for tweet in twitter.home_timeline():
         tweets.append({

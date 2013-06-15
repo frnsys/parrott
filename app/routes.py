@@ -6,9 +6,8 @@ from app import app
 # Create RESTful routing for Tweet
 # using Flask's MethodView.
 class TweetAPI(MethodView):
-    # Viewing a tweet.
+    # Get a tweet.
     def get(self, tweet_id):
-        print request.__dict__
         # If no id is specified...
         if tweet_id is None:
             tweets = app.parrott.memory.recall_unaudited(0)
@@ -66,6 +65,7 @@ def index():
 def backbone(page=0):
     return render_template('index.html')
 
+# Get audited tweets (paginated).
 @app.route('/api/audited/')
 @app.route('/api/audited/<int:page>')
 def audited(page=0):
@@ -75,6 +75,7 @@ def audited(page=0):
     tweets = app.parrott.memory.recall_audited(page)
     return jsonify(data=tweets, page=page)
 
+# Get unaudited tweets (paginated).
 @app.route('/api/audit/')
 @app.route('/api/audit/<int:page>')
 def audit(page=0):
@@ -85,6 +86,7 @@ def audit(page=0):
     tweets = app.parrott.memory.recall_unaudited(page)
     return jsonify(data=tweets, page=page)
 
+# Try classifying some text.
 @app.route('/classify', methods=['GET','POST'])
 def classify():
     form = ClassifyForm()

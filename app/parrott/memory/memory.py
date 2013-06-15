@@ -13,6 +13,10 @@ SOLR_URL = "http://localhost:8983/solr/"
 
 class Memory:
     def __init__(self):
+        '''
+        Setup and connect to Solr,
+        and return a SolrInterface.
+        '''
         h = httplib2.Http(cache="/var/tmp/solr_cache")
         self.memory = sunburnt.SolrInterface(url=SOLR_URL, http_connection=h)
 

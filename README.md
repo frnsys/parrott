@@ -18,10 +18,11 @@ classifier](http://goo.gl/uLmBf). Though Parrott uses unigrams, the
 classifier supports any ngram, so you could modify the program to use
 bigrams and so on.
 
-Parrott is still under development. It is licensed under the [MIT
+Parrott is licensed under the [MIT
 license](https://github.com/ftzeng/parrott/blob/master/LICENSE.txt).
 
-Note: to run the dev Jetty/Solr server:
+## Setup
+To get Parrott up and running, you need to start the Jetty/Solr server:
 ``` bash
     $ cd solr
     $ java -jar start.jar -Dsolr.solr.home=memory

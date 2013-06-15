@@ -171,10 +171,17 @@ class NaiveBayes:
 			The normalized document
 		'''
 
+        # Lowercase the doc, and clean it up.
 		_doc = re.sub(r'[^a-z0-9\s]', '', doc.lower())
+
+        # If the ngrams are larger than 1,
+        # need to append START and END tokens to the doc.
 		if self.ngram_size > 1:
 			_doc = 'START ' + _doc + ' END'
+
+        # Compress extra whitespace.
 		_doc = re.sub(r'\s+', ' ', _doc)
+
 		return _doc
 
 
