@@ -15,28 +15,25 @@ function(app) {
             audited: false
 		},
 
+        // Properly parse the JSON
+        // response from the backend.
         parse: function(response) {
             return response
-        },
-
-		initialize: function() {
-		}
+        }
 	});
 
 	Tweet.Collection = Backbone.Collection.extend({
 		model: Tweet.Model,
 
-		// Where to fetch the data from
+		// Where to fetch the data from.
 		url: function() {
 			return "/api/tweet";
 		},
 
-		// How to handle the fetched data
+		// How to handle the fetched
+        // JSON response.
 		parse: function(response) {
 			return response.data;
-		},
-
-		initialize: function(models, options) {
 		}
 	});
 
@@ -44,20 +41,21 @@ function(app) {
 		template:"tweet/item",
 		tagName:"li",
 
-		// The data that gets passed to the view
+		// The data that gets passed to the view.
 		serialize: function() {
 			return {
 				tweet: this.model.toJSON()
 			};
 		},
 
-		// Bind some events
+		// Bind some events.
 		events: {
 			'click .delete': 'delete',
             'click .mark-positive': 'markPositive',
             'click .mark-negative': 'markNegative'
 		},
 
+        // Delete a tweet.
 		delete: function() {
             if ( confirm("Are you sure you want to delete this tweet?") ) {
                 this.model.destroy();
@@ -65,6 +63,7 @@ function(app) {
             }
 		},
 
+        // Mark a tweet as positive.
         markPositive: function() {
             this.model.set({
                 'audited': true,
@@ -73,6 +72,7 @@ function(app) {
             this.model.save();
         },
 
+        // Mark a tweet as negative.
         markNegative: function() {
             this.model.set({
                 'audited': true,
@@ -87,7 +87,7 @@ function(app) {
 		template: "tweet/list",
 		className: "tweet-list",
 
-		// The data that gets passed to the view
+		// The data that gets passed to the view.
 		serialize: function() {
 			return {
 				collection: this.options.tweets,
@@ -95,15 +95,15 @@ function(app) {
 			};
 		},
 
-		// Do stuff before the view is rendered
+		// Do stuff before the view is rendered.
 		beforeRender: function() {
-			var view = this;
+			var self = this;
 
 			// For each tweet in collection
 			this.options.tweets.each(function(tweet) {
 
 				// Insert a Tweet item view with tweet to the ul
-				view.insertView("ul", new Tweet.Views.Item({
+				self.insertView("ul", new Tweet.Views.Item({
 					model: tweet
 				}));
 
@@ -111,7 +111,7 @@ function(app) {
 		},
 
 		initialize: function() {
-			// Listen to some events
+			// Listen to some events.
 			this.listenTo(this.options.tweets, {
 				"reset": function() {
 					this.render();
@@ -132,6 +132,6 @@ function(app) {
 		}
 	});
 
-	// Return the module for AMD compliance
+	// Return the module for AMD compliance.
 	return Tweet;
 });

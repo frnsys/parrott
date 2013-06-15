@@ -3,14 +3,15 @@
     <h1>Classify</h1>
 
     {# Show flash messages. #}
-    {% with messages = get_flashed_message() %}
-    {% if messages %}
-    <ul>
-        {% for message in message %}
-            <li>{{message}}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
 
     <form action="" method="post" name="login">
         {# CSRF field. #}

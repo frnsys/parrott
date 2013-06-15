@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, request, jsonify
+from flask import render_template, flash, redirect, request, jsonify, url_for
 from forms import ClassifyForm
 from flask.views import MethodView
 from app import app
@@ -80,7 +80,8 @@ def classify():
 
     # Redirect on (valid) submit
     if form.validate_on_submit():
+        print form.tweet.data
         flash('The text you submitted was %s' % (form.tweet.data))
-        return redirect('/')
+        return redirect(url_for('classify'))
     return render_template('classify.html', form=form)
 
