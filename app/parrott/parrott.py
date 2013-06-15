@@ -27,8 +27,15 @@ class Parrott:
         Trains the Parrott on examples
         stored in Memory (Solr)
         '''
-        pos = self.memory.recall_positive
-        neg = self.memory.recall_negative
+        # Fetch 1000 positive and negative examples.
+        pos_tweets = self.memory.recall_positive(0, 1000)
+        neg_tweets = self.memory.recall_negative(0, 1000)
+
+        # Pull out the proper text for training data.
+        pos = [' '.join([tweet['tweet'], tweet['user']]) for tweet in pos_tweets]
+        neg = [' '.join([tweet['tweet'], tweet['user']]) for tweet in neg_tweets]
+
+        # Train the brain.
         self.brain.train(pos, neg)
 
     def test(self, pos_set, neg_set, threshold=0.8):

@@ -17,6 +17,11 @@ class NaiveBayes:
 	def train(self, pos_examples, neg_examples, ngram_size=1):
 		'''
 		Trains the classifier
+
+        Args:
+            pos_examples (list): the positive example documents
+            neg_examples (list): the negative example documents
+            ngram_size (int): size of the ngrams
 		'''
 
 		self.ngram_size = ngram_size

@@ -11,7 +11,7 @@ class TweetAPI(MethodView):
         # If no id is specified...
         if tweet_id is None:
             tweets = app.parrott.memory.recall_unaudited(0)
-            return jsonify(data=tweets.result.docs)
+            return jsonify(data=tweets)
         else:
             tweet = app.parrott.memory.recall(tweet_id)
             return jsonify(tweet=tweet)
@@ -62,7 +62,7 @@ def audited(page=0):
     View latest audited Tweets.
     '''
     tweets = app.parrott.memory.recall_audited(page)
-    return jsonify(data=tweets.result.docs, page=page)
+    return jsonify(data=tweets, page=page)
 
 @app.route('/api/audit/')
 @app.route('/api/audit/<int:page>')
@@ -72,7 +72,7 @@ def audit(page=0):
     for auditing.
     '''
     tweets = app.parrott.memory.recall_unaudited(page)
-    return jsonify(data=tweets.result.docs, page=page)
+    return jsonify(data=tweets, page=page)
 
 @app.route('/classify', methods=['GET','POST'])
 def classify():
@@ -80,8 +80,10 @@ def classify():
 
     # Redirect on (valid) submit
     if form.validate_on_submit():
-        print form.tweet.data
+        app.parrott.train()
+        result = app.parrott.classify(form.tweet.data)
         flash('The text you submitted was %s' % (form.tweet.data))
+        flash('Your result was %f' % (result))
         return redirect(url_for('classify'))
     return render_template('classify.html', form=form)
 
