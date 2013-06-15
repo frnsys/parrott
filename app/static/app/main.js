@@ -11,9 +11,8 @@ require([
 	// attach it to the app.
 	app.router = new Router();
 
-	// Use hash urls for prototyping
-	// This way we can just use a simple HTTP server
-	Backbone.history.start({ pushState: false, root: app.root });
+    // HTML History API!
+	Backbone.history.start({ pushState: true, root: app.root });
 
 	// Relative links will be navigated
 	// through the Backbone router.

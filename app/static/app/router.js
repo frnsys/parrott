@@ -3,55 +3,98 @@ define([
 			 'app',
 
 			 // Modules.
-			 'modules/book'
-], function(app, Book) {
+			 'modules/tweet'
+], function(app, Tweet) {
 	var Router = Backbone.Router.extend({
 		initialize: function() {
 			var collections = {
-				books: new Book.Collection()
+				tweets: new Tweet.Collection()
 			}
 
-			// Attach collections to the router
-			// i.e. this.books
+			// Attach collections to the router.
+			// i.e. this.tweets
 			_.extend(this, collections);
 		},
 
 		routes: {
 			'': 'index',
-			'book/:slug': 'book'
+            'audited': 'audited',
+            'audited/:page': 'audited',
+            'audit': 'audit',
+            'audit/:page': 'audit'
 		},
 
 		index: function() {
-			// Create main layout (main.jade)
+            // Create and insert the view,
+            // using the 'main' layout (main.jade).
 			app.useLayout('main').setViews({
-				".books": new Book.Views.List({ books: this.books })
+				".tweets": new Tweet.Views.List({ tweets: this.tweets })
 			}).render();
 
-			this.books.fetch({ reset: true });
+            // Set the proper API endpoint
+            // to fetch from.
+            this.tweets.url = '/api/tweet';
+			this.tweets.fetch({ reset: true });
 		},
 
-		book: function(slug) {
-			// There is probably a better/proper
-			// way to do this.
-			var books = this.books;
-			books.fetch({
-				success: function() {
-					var book = books.get(slug);
-					app.useLayout("main").setViews({
-						".books": new Book.Views.Single({ model: book })
-					}).render();
-				}
-			});
+		audited: function(page) {
+            var page = page || 0
+
+            // Reset/empty out the collections.
+            this.reset();
+
+            // Create and insert the view.
+			app.useLayout('audited').setViews({
+				".tweets": new Tweet.Views.List({
+                    tweets: this.tweets,
+
+                    // Pass in the page and
+                    // route path for building
+                    // pagination links.
+                    page: page,
+                    path: '/audited/'
+                })
+			}).render();
+
+            // Set the proper API endpoint
+            // to fetch from.
+            this.tweets.url = '/api/audited/' + page.toString();
+            this.tweets.fetch({ reset: true });
 		},
+
+        audit: function(page) {
+            var page = page || 0
+
+            // Reset/empty out the collections.
+            this.reset();
+
+            // Create and insert the view.
+			app.useLayout('audit').setViews({
+				".tweets": new Tweet.Views.List({
+                    tweets: this.tweets,
+
+                    // Pass in the page and
+                    // route path for building
+                    // pagination links.
+                    page: page,
+                    path: '/audit/'
+                })
+			}).render();
+
+            // Set the proper API endpoint
+            // to fetch from.
+            this.tweets.url = '/api/audit/' + page.toString();
+            this.tweets.fetch({ reset: true });
+        },
 
 		reset: function() {
-			// Reset collections to initial state
-			if (this.books.length) {
-				this.books.reset();
+			// Reset collections to initial state.
+			if (this.tweets.length) {
+				this.tweets.reset();
 			}
 		},
 
-		// Shortcut for building a url
+		// Shortcut for building a url.
 		go: function() {
 			return this.navigate(_.toArray(arguments).join("/"), true);
 		}

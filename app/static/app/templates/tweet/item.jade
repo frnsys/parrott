@@ -1,1 +1,8 @@
-| #{book.title} ( #{book.author} ) #{book.slug}
+| #{tweet.user} ( #{tweet.tweet} )
+span.delete delete me
+span.mark-positive positive
+span.mark-negative negative
+if tweet.positive
+    | +
+else
+    | -
