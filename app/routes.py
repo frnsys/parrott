@@ -93,8 +93,9 @@ def classify():
     if form.validate_on_submit():
         app.parrott.train()
         result = app.parrott.classify(form.tweet.data)
-        flash('The text you submitted was %s' % (form.tweet.data))
-        flash('Your result was %f' % (result))
-        return redirect(url_for('classify'))
+        # Was flashing this before, but I want a bit more control over how this renders.
+        #flash('"%s" is %f likely to be retweetable.' % (form.tweet.data, result))
+        #return redirect(url_for('classify'))
+        return render_template('classify.html', form=form, tweet=form.tweet.data, result=result)
     return render_template('classify.html', form=form)
 

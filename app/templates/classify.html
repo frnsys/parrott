@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h1>Classify</h1>
+    <h2><span>Classify</span></h2>
 
     {# Show flash messages. #}
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul>
+        <ul class="results">
             {% for message in messages %}
                 <li>{{message}}</li>
             {% endfor %}
@@ -13,11 +13,17 @@
         {% endif %}
     {% endwith %}
 
-    <form action="" method="post" name="login">
+    {% if tweet %}
+        <div class="result mega">
+            "<span>{{tweet}}</span>" is <b>{{result}}</b> likely to be retweetable.
+        </div>
+    {% endif %}
+
+    <form action="" method="post" name="classify">
         {# CSRF field. #}
         {{form.hidden_tag()}}
 
-        {{form.tweet(size=140)}}
+        {{form.tweet(size=140, placeholder='Enter your tweet')}}
 
         {# Show validation errors. #}
         {% for error in form.errors.tweet %}
@@ -26,4 +32,9 @@
 
         <input type="submit" value="Classify">
     </form>
+
+    <script>
+        // Focus on text field on load.
+        document.classify.tweet.focus();
+    </script>
 {% endblock %}
