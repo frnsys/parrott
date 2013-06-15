@@ -91,7 +91,11 @@ function(app) {
 		serialize: function() {
 			return {
 				collection: this.options.tweets,
-				count: this.options.tweets.length
+
+                // For building the pagination links.
+				count: this.options.tweets.length,
+                page: this.options.page,
+                path: this.options.path
 			};
 		},
 

@@ -1,2 +1,6 @@
-h4 You have #{count} books
 ul
+if page > 0
+    - var prev_page = path + (parseInt(page) - 1)
+    a(href=prev_page) Prev
+- var next_page = path + (parseInt(page) + 1)
+a(href=next_page) Next

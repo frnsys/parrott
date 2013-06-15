@@ -44,8 +44,16 @@ define([
             this.reset();
 
             // Create and insert the view.
-			app.useLayout('main').setViews({
-				".tweets": new Tweet.Views.List({ tweets: this.tweets })
+			app.useLayout('audited').setViews({
+				".tweets": new Tweet.Views.List({
+                    tweets: this.tweets,
+
+                    // Pass in the page and
+                    // route path for building
+                    // pagination links.
+                    page: page,
+                    path: '/audited/'
+                })
 			}).render();
 
             // Set the proper API endpoint
@@ -61,8 +69,16 @@ define([
             this.reset();
 
             // Create and insert the view.
-			app.useLayout('main').setViews({
-				".tweets": new Tweet.Views.List({ tweets: this.tweets })
+			app.useLayout('audit').setViews({
+				".tweets": new Tweet.Views.List({
+                    tweets: this.tweets,
+
+                    // Pass in the page and
+                    // route path for building
+                    // pagination links.
+                    page: page,
+                    path: '/audit/'
+                })
 			}).render();
 
             // Set the proper API endpoint
