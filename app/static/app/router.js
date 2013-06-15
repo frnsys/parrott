@@ -7,7 +7,6 @@ define([
 ], function(app, Tweet) {
 	var Router = Backbone.Router.extend({
 		initialize: function() {
-            console.log("hello");
 			var collections = {
 				tweets: new Tweet.Collection()
 			}
@@ -19,21 +18,49 @@ define([
 
 		routes: {
 			'': 'index',
-			'tweet/:id': 'tweet'
+            'audited': 'audited',
+            'audit': 'audit'
 		},
 
 		index: function() {
-            console.log("index");
 			// Create main layout (main.jade)
 			app.useLayout('main').setViews({
 				".tweets": new Tweet.Views.List({ tweets: this.tweets })
 			}).render();
 
+            // Set the proper API endpoint
+            // to fetch from.
+            this.tweets.url = '/api/tweet';
 			this.tweets.fetch({ reset: true });
 		},
 
-		tweet: function(id) {
+		audited: function() {
+            // Reset/empty out the collections.
+            this.reset();
+
+			app.useLayout('main').setViews({
+				".tweets": new Tweet.Views.List({ tweets: this.tweets })
+			}).render();
+
+            // Set the proper API endpoint
+            // to fetch from.
+            this.tweets.url = '/api/audited';
+            this.tweets.fetch({ reset: true });
 		},
+
+        audit: function() {
+            // Reset/empty out the collections.
+            this.reset();
+
+			app.useLayout('main').setViews({
+				".tweets": new Tweet.Views.List({ tweets: this.tweets })
+			}).render();
+
+            // Set the proper API endpoint
+            // to fetch from.
+            this.tweets.url = '/api/audit'
+            this.tweets.fetch({ reset: true });
+        },
 
 		reset: function() {
 			// Reset collections to initial state

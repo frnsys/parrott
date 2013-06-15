@@ -8,6 +8,7 @@ from app import app
 class TweetAPI(MethodView):
     # Viewing a tweet.
     def get(self, tweet_id):
+        print request.__dict__
         # If no id is specified...
         if tweet_id is None:
             tweets = app.parrott.memory.recall_unaudited(0)
@@ -52,6 +53,8 @@ app.add_url_rule('/api/tweet/<tweet_id>',
 # which will start require.js.
 @app.route('/')
 @app.route('/index')
+@app.route('/audited')
+@app.route('/audit')
 def index():
     return render_template('index.html')
 
