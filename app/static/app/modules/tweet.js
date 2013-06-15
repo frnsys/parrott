@@ -15,6 +15,14 @@ function(app) {
             audited: false
 		},
 
+        // Specify the url root for this model.
+        // Otherwise, Backbone will derive it
+        // from the collection's url,
+        // which does not always point to the right url.
+        urlRoot: function() {
+            return "/api/tweet/";
+        },
+
         // Properly parse the JSON
         // response from the backend.
         parse: function(response) {
@@ -57,6 +65,7 @@ function(app) {
 
         // Delete a tweet.
 		delete: function() {
+            // Ask for confirmation.
             if ( confirm("Are you sure you want to delete this tweet?") ) {
                 this.model.destroy();
                 this.$el.fadeOut();
@@ -64,21 +73,33 @@ function(app) {
 		},
 
         // Mark a tweet as positive.
-        markPositive: function() {
+        markPositive: function(e) {
+            // Audit the model as a positive example.
             this.model.set({
                 'audited': true,
                 'positive': true
             });
             this.model.save();
+
+            // Update the view.
+            $(e.target).closest('li').find('.marker')
+                .removeClass('negative')
+                .addClass('positive')
         },
 
         // Mark a tweet as negative.
-        markNegative: function() {
+        markNegative: function(e) {
+            // Audit the model as a negative example.
             this.model.set({
                 'audited': true,
                 'positive': false
             });
             this.model.save();
+
+            // Update the view.
+            $(e.target).closest('li').find('.marker')
+                .removeClass('positive')
+                .addClass('negative')
         }
 
 	});

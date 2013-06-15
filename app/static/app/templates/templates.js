@@ -60,6 +60,10 @@ else
 buf.push('\n<div class="marker negative"></div>');
 }
 }
+else
+{
+buf.push('\n<div class="marker"></div>');
+}
 }
 return buf.join("");
 };
