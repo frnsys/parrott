@@ -63,7 +63,7 @@ for marking tweets as positive or negative training examples.
 You can visit `http://localhost:5000/classify` to try classifying some
 text.
 
-Note that new Tweets will be collected from the authenciated user's
+Note that new Tweets will be collected from the authenticated user's
 timeline every 30 minutes. You can edit this in `application.py`.
 
 
