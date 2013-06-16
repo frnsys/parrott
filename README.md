@@ -94,6 +94,10 @@ I'm lazy and want a computer to do my social media for me.
 ## To Do
 * Make the damn thing more accurate
 * Add in the auto-retweeting feature (which can be turned on or off)
+* Currently Parrott trains itself on a maximum of 2000 examples (1000
+        positive, 1000 negative). You can't query Solr for all records,
+    so I tentatively set the amount to 2000. This is a value I'll have
+    to play around with.
 
 ## Nice-To-Haves (Advanced Features)
 * Follow links, pass through
