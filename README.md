@@ -19,6 +19,7 @@ classifier supports any ngram, so you could modify the program to use
 bigrams and so on.
 
 Parrott is built with [Flask](http://flask.pocoo.org/), [Solr](https://lucene.apache.org/solr/), and [Backbone](http://backbonejs.org/).
+
 Parrott is licensed under the [MIT
 license](https://github.com/ftzeng/parrott/blob/master/LICENSE.txt).
 
@@ -37,6 +38,7 @@ Then you need to start the Jetty/Solr server:
     $ java -jar start.jar -Dsolr.solr.home=memory
 ```
 Then access at `http://localhost:8983/solr/#/`.
+
 Note that you can move this `solr` directory to another machine and run
 it there. But you will have to update the `SOLR_URL` constant in
 `app/parrott/memory/memory.py` to point to the new Solr URL.
@@ -65,9 +67,11 @@ timeline every 30 minutes. You can edit this in `application.py`.
 If you want to build off of Parrott, there's a bit of extra setup required to
 work on the frontend. The frontend is built off
 [Bane](https://github.com/ftzeng/bane), look there for a bit more info.
+
 You will need [Node](http://nodejs.org/), 
 [NPM](https://npmjs.org/), and
 [grunt-cli](https://github.com/gruntjs/grunt-cli). You will also need [Jam](http://jamjs.org/).
+
 Once you have that, all you have to do is:
 ``` bash
     $ cd app/static/
@@ -76,6 +80,7 @@ Once you have that, all you have to do is:
     $ grunt
 ```
 The final command, `grunt`, will setup the [Grunt](http://gruntjs.com/) task runner to monitor for file changes and automate compiling, etc.
+
 Note that this is all in addition to the other setup instructions above.
 
 ## Why Parrott?
