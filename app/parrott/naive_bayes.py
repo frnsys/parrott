@@ -28,13 +28,18 @@ class NaiveBayes:
 		self.pos_examples = pos_examples
 		self.neg_examples = neg_examples
 
+        # Get the counts for each ngram in each document set.
 		self.pos_counts = self._get_ngram_counts(self.pos_examples)
 		self.neg_counts = self._get_ngram_counts(self.neg_examples)
 
+        # Get the total count of positive and negative ngrams.
 		pos_total_count = sum(self.pos_counts.itervalues())
 		neg_total_count = sum(self.neg_counts.itervalues())
 
+        # Iterate over all the ngrams, from both sets.
 		for ngram in set(self.pos_counts.keys() + self.neg_counts.keys()):
+            # Calculate the probability of this ngram being positive,
+            # and the probability of this ngram being negative.
 			pos_p = float(self.pos_counts[ngram]) / pos_total_count
 			neg_p = float(self.pos_counts[ngram]) / neg_total_count
 			self.probs[ngram] = [pos_p, neg_p]
@@ -51,18 +56,28 @@ class NaiveBayes:
 		Returns:
 			Dictionary of true positives, false positives, true negatives, and false negatives
 		'''
+
+        # True positive, false positive, true negative, false negative.
 		tp = fp = tn = fn = 0
 
+        # For each document in the positive test examples...
 		for doc in pos_test_examples:
+            # Classify and compare result to the specified threshold.
 			if self.classify(doc) > threshold:
+                # The classifier recognizes that this is positive.
 				tp += 1
 			else:
+                # The classifier did not recognize that this is positive.
 				fn += 1
 
+        # For each document in the negative test examples...
 		for doc in neg_test_examples:
+            # Classify and compare result to the specified threshold.
 			if self.classify(doc) < threshold:
+                # The classifier recognizes that this is negative.
 				tn += 1
 			else:
+                # The classifier did not recognize that this is negative.
 				fp += 1
 
 		return {'true positives': tp,
@@ -78,8 +93,14 @@ class NaiveBayes:
 		Returns:
 			List of best positive classification predictors
 		'''
+        # Get total positive ngram count.
 		total_pos_count = sum(self.pos_counts.itervalues())
+
+        # Sort by probabilities [pos,neg] by pos/(pos+neg)
 		sorted_list = sorted(self.probs.items(), key=lambda (k,v): v[0] / sum(v))
+
+        # Filter the sorted list to include only ngrams
+        # that have a positive count > 10.
 		filtered_list = filter(lambda (k,v): self.pos_counts[k] > 10, sorted_list)
 		return list(reversed(filtered_list))[:500]
 
@@ -90,8 +111,15 @@ class NaiveBayes:
 		Returns:
 			List of best negative classification predictors
 		'''
+
+        # Get total negative ngram count.
 		total_neg_count = sum(self.neg_counts.itervalues())
+
+        # Sort by probabilities [pos,neg] by neg/(pos+neg)
 		sorted_list = sorted(self.probs.items(), key=lambda (k,v): v[1] / sum(v))
+
+        # Filter the sorted list to include only ngrams
+        # that have a negative count > 10.
 		filtered_list = filter(lambda (k,v): self.neg_counts[k] > 10, sorted_list)
 		return list(reversed(filtered_list))[:500]
 
@@ -105,14 +133,18 @@ class NaiveBayes:
 			The probability of positive classification
 		'''
 
-		# Create pos/neg probabilities for each ngram,
-		# initialize as 0.5 if no data available.
+        # Retrieve the pos/neg probabilities for each ngram
+        # in the specified doc.
+        # Set probability=[0.5,0.5] if no data is available for that ngram.
 		probs = [self.probs.setdefault(ngram, [0.5,0.5])
 				for ngram in self._to_ngrams(doc)]
 
 		if not probs: return 0
 
-		# Get the products of positive and negative probabilities
+        # Calculate the product of all positive probabilities,
+        # and the product of all negative probabilities.
+        # Note: `reduce` performs a specified operation, here x*y,
+        # going down a list: http://bit.ly/11HHsmx
 		pos_probs = reduce(lambda x,y: x*y, [prob[0] for prob in probs])
 		neg_probs = reduce(lambda x,y: x*y, [prob[1] for prob in probs])
 		return pos_probs / (pos_probs + neg_probs)
@@ -129,11 +161,15 @@ class NaiveBayes:
 			A hash of the ngrams and their counts
 		'''
 
-		# Add-one smoothing
+		# Add-one smoothing.
 		counts = collections.defaultdict(lambda: 1)
+
+        # For each document...
 		for doc in docs:
+            # Count the ngrams.
 			for ngram in self._to_ngrams(doc):
 				counts[ngram] += 1
+
 		return counts
 
 
@@ -150,9 +186,11 @@ class NaiveBayes:
 		ngrams = list()
 		normalized = self._normalize(doc).split()
 
-		# Iterate over the normalized doc in chunk sizes of ngram_size
+		# Iterate over the normalized doc in chunks,
+        # where each chunk is of ngram_size.
 		# http://goo.gl/2bYCD
 		for chunk in map(None, *(iter(normalized),)*self.ngram_size):
+            # If ngram size is > 1, join the tokens with a space.
 			if self.ngram_size > 1:
 				ngrams.append(' '.join(chunk))
 			else:
