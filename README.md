@@ -57,7 +57,11 @@ Finally, you can start the actual application:
 You should be prompted, in the command line, to authenticate your
 Twitter account. Follow those instructions.
 
-Then see Parrott at `http://localhost:5000/`.
+Then see Parrott at `http://localhost:5000/`. This provides an interface
+for marking tweets as positive or negative training examples.
+
+You can visit `http://localhost:5000/classify` to try classifying some
+text.
 
 Note that new Tweets will be collected from the authenciated user's
 timeline every 30 minutes. You can edit this in `application.py`.
@@ -89,6 +93,7 @@ I'm lazy and want a computer to do my social media for me.
 
 ## To Do
 * Make the damn thing more accurate
+* Add in the auto-retweeting feature (which can be turned on or off)
 
 ## Nice-To-Haves (Advanced Features)
 * Follow links, pass through
