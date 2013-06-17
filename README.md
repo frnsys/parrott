@@ -92,12 +92,18 @@ I'm lazy and want a computer to do my social media for me.
 
 
 ## To Do
-* Make the damn thing more accurate
+* fix pagination on index page
+* there are repeat tweets showing up. maybe do a search against the
+    body of a tweet to see if one already exists?
 * Add in the auto-retweeting feature (which can be turned on or off)
 * Currently Parrott trains itself on a maximum of 2000 examples (1000
         positive, 1000 negative). You can't query Solr for all records,
     so I tentatively set the amount to 2000. This is a value I'll have
     to play around with.
+* related to the above, maybe write it so that solr keeps retrieving docs
+until docs.length < amount asked for? i.e. if i'm asking for 1000 docs,
+      keep querying the next set of 1000 until less than 1000 are
+      returned.>
 
 ## Nice-To-Haves (Advanced Features)
 * Follow links, pass through
